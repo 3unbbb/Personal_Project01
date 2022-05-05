@@ -271,15 +271,7 @@
 					$this._hide(event);
 				});
 
-			// Event: Toggle.
-				$body.on('click', 'a[href="#' + id + '"]', function(event) {
 
-					event.preventDefault();
-					event.stopPropagation();
-
-					config.target.toggleClass(config.visibleClass);
-
-				});
 
 		// Window.
 
