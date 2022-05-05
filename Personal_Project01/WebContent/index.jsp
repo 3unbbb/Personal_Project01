@@ -26,7 +26,39 @@
 	<jsp:include page="./inc/header.jsp"></jsp:include>
 	<!-- Header -->
 	
-	<!-- Banner -->
+
+	<!-- 게시판 -->
+	<article>
+<h1>Notice</h1>
+<table id="notice">
+<tr><th class="tno">No.</th>
+    <th class="ttitle">Title</th>
+    <th class="twrite">Writer</th>
+    <th class="tdate">Date</th>
+    <th class="tread">Read</th></tr>
+<tr><td>15</td><td class="left" >Vivanus viveer portitor commodo.</td>
+    <td>Host Admin</td><td>2012.11.06</td><td>15</td></tr>
+<tr><td>14</td><td class="left">Vivanus viveer portitor commodo.</td>
+    <td>Host Admin</td><td>2012.11.06</td><td>15</td></tr>
+<tr><td>13</td><td class="left">Vivanus viveer portitor commodo.</td>
+    <td>Host Admin</td><td>2012.11.06</td><td>15</td></tr>
+<tr><td>12</td><td class="left">Vivanus viveer portitor commodo.</td>
+    <td>Host Admin</td><td>2012.11.06</td><td>15</td></tr>
+  
+</table>
+
+<div class="clear"></div>
+<div id="page_control">
+<a href="#">Prev</a>
+<a href="#">1</a><a href="#">2</a><a href="#">3</a>
+<a href="#">4</a><a href="#">5</a><a href="#">6</a>
+<a href="#">7</a><a href="#">8</a><a href="#">9</a>
+<a href="#">10</a>
+<a href="#">Next</a>
+</div>
+</article>
+	<!-- 게시판 -->
+		<!-- Banner -->
 	<section id="banner">
 	<div class="content">
 		<header>
@@ -44,7 +76,6 @@
 	</span>
 	</section>
 	<!-- Banner -->
-
 	<!-- Section -->
 	<section>
 		<header class="major">
