@@ -23,9 +23,9 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.jsp">Homepage</a></li>
-										<li><a href="generic.jsp">Generic</a></li>
-										<li><a href="elements.jsp">Elements</a></li>
+										<li><a href="./index.jsp">Homepage</a></li>
+										<li><a href="./generic.jsp">Generic</a></li>
+										<li><a href="./elements.jsp">Elements</a></li>
 										<li>
 											<span class="opener">Submenu</span>
 											<ul>
