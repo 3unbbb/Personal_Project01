@@ -7,6 +7,8 @@ public class BoardDTO {
 	private String id;
 	private String subject;
 	private String content;
+	private String company;
+	private String department;
 	
 	private int read_conunt;
 	private int re_ref;
@@ -14,9 +16,21 @@ public class BoardDTO {
 	private int re_seq;
 	
 	private int date;
-	private int ip;
+	private String ip;
 	private String file;
 	
+	public String getCompany() {
+		return company;
+	}
+	public void setCompany(String company) {
+		this.company = company;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
 	
 	public int getNum() {
 		return num;
@@ -72,10 +86,10 @@ public class BoardDTO {
 	public void setDate(int date) {
 		this.date = date;
 	}
-	public int getIp() {
+	public String getIp() {
 		return ip;
 	}
-	public void setIp(int ip) {
+	public void setIp(String ip) {
 		this.ip = ip;
 	}
 	public String getFile() {

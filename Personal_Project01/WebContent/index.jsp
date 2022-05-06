@@ -142,6 +142,7 @@
 				<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
 				Nashville, TN 00000-0000</li>
 			</ul>
+			
 	</section>
 
 	</div>
