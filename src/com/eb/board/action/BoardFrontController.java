@@ -100,7 +100,6 @@ public class BoardFrontController extends HttpServlet{
 			HttpServletResponse response) throws ServletException, IOException {
 		System.out.println(" BoardFrontController - doGET() 호출");
 		doProcess(request, response);
-		// TODO Auto-generated method stub
 	}
 
 	@Override
@@ -108,7 +107,6 @@ public class BoardFrontController extends HttpServlet{
 			HttpServletResponse response) throws ServletException, IOException {
 		System.out.println(" BoardFrontController - doPOST() 호출");
 		doProcess(request, response);
-		// TODO Auto-generated method stub
 	}
 	
 	

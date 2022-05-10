@@ -20,6 +20,17 @@
   	<url-pattern>*.bo</url-pattern>
   </servlet-mapping>
   
+
+  <servlet>
+  	<servlet-name>MemberFrontController</servlet-name>
+  	<servlet-class>com.eb.board.action.MemberFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>MemberFrontController</servlet-name>
+  	<url-pattern>*.mm</url-pattern>
+  </servlet-mapping>
+  
   <!-- 한글처리하기 -->
   <filter>
   	<filter-name>SetUTF</filter-name>

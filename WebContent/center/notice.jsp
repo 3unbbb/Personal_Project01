@@ -16,11 +16,12 @@
 	<body class="is-preload">
 
 	<!-- Wrapper -->
-		<div id="wrapper">
+	<div id="wrapper">
+
 
 	<!-- Main -->
-		<div id="main">
-		<div class="inner">
+	<div id="main">
+	<div class="inner">
 
 	<!-- Header -->
 	<jsp:include page="../inc/header.jsp"></jsp:include>
@@ -29,136 +30,47 @@
 
 	<!-- 게시판 -->
 	<article>
-	
-<h1>Notice</h1>
-<table id="notice">
-<tr><th class="tno">No.</th>
-    <th class="ttitle">Title</th>
-    <th class="twrite">Writer</th>
-    <th class="tdate">Date</th>
-    <th class="tread">Read</th></tr>
+		<h1>Notice</h1>
+		<table id="notice">
+			<tr>
+				<th class="tno">No.</th>
+ 			 	<th class="ttitle">Title</th>
+   				<th class="twrite">Writer</th>
+   				<th class="tdate">Date</th>
+				<th class="tread">Read</th>
+			</tr>
     
-<tr><td>15</td><td class="left" >Vivanus viveer portitor commodo.</td>
-    <td>Host Admin</td><td>2012.11.06</td><td>15</td></tr>
-    
-</table>
-    <input type = "button" value="write" onclick=" location.href ='../BoardWrite.bo';">
-
-</div>
-</article>
-	<!-- 게시판 -->
-		<!-- Banner -->
-	<section id="banner">
-	<div class="content">
-		<header>
-			<h1>Hi, I’m Editorial<br />
-				by HTML5 UP</h1>	
-		</header>
-				
-				<ul class="actions">
-					<li><a href="#" class="button big">Learn More</a></li>
-				</ul>
-	</div>
-	
-	<span class="image object">
-		<img src="../images/pic10.jpg" alt="" />
-	</span>
+			<tr>
+				<td>15</td>
+				<td class="left" >Vivanus viveer portitor commodo.</td>
+   				<td>Host Admin</td>
+   				<td>2012.11.06</td>
+   				<td>15</td>
+   			</tr>
+		</table>
+    <input type = "button" value="write" onclick=" location.href ='./BoardWrite.bo';">
+					
+	<!-- Search -->
+	<section id="search" class="alt">
+	<form method="post" action="#">
+		<input type="button" value="search" onclick = "">
+		<input type ="text" name = "serach" width ="5">
+	</form>
 	</section>
-	<!-- Banner -->
-	<!-- Section -->
-	<section>
-		<header class="major">
-			<h2>Erat lacinia</h2>
-		</header>
-		<div class="features">
-			<article>
-				<span class="icon fa-gem"></span>
-					<div class="content">
-						<h3>Portitor ullamcorper</h3>
-						<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.</p>
-					</div>
-			</article>
-		</div>
-	</section>
-
-							<!-- Section -->
-	<section>
-		<header class="major">
-			<h2>Ipsum sed dolor</h2>
-		</header>
-		<div class="posts">
-			<article>
-				<a href="#" class="image"><img src="../images/pic01.jpg" alt="" /></a>
-				<h3>Interdum aenean</h3>
-				<p>Aenean ornare velit lacus.</p>
-				<ul class="actions">
-					<li><a href="#" class="button">More</a></li>
-				</ul>
-			</article>
-			
-			<article>
-				<a href="#" class="image"><img src="../images/pic02.jpg" alt="" /></a>
-				<h3>Nulla amet dolore</h3>
-				<p>Aenean ornare velit lacus.</p>
-				<ul class="actions">
-					<li><a href="#" class="button">More</a></li>
-				</ul>
-				</article>
-		</div>
-	</section>
+	<!-- Search -->
 	
-	<section>
-	<header class="major">
-		<h2>Ante interdum</h2>to
-	</header>
 	
-	<div class="mini-posts">
-	<article>
-		<a href="#" class="image"><img src="../images/pic07.jpg" alt="" /></a>
-		<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
 	</article>
-	
-	</div>
-	
-	<ul class="actions">
-		<li><a href="#" class="button">More</a></li>
-	</ul>
-	</section>
-	
-	<section>
-		<header class="major">
-			<h2>Get in touch</h2>
-		</header>
-			<p>Sed varius Sed nulla amet lorem feugiat tempus aliquam.</p>
-			<ul class="contact">
-				<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-				<li class="icon solid fa-phone">(000) 000-0000</li>
-				<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-				Nashville, TN 00000-0000</li>
-			</ul>
-			
-	</section>
+
+	</div> 
+	<!-- inner -->
+	<!-- 게시판 -->
 
 	</div>
-	</div>
-
 	<!-- Sidebar -->
 	<jsp:include page="../inc/left.jsp"></jsp:include>
 	<!-- Sidebar -->
-	<!-- Section -->
-
-	<!-- Section -->
-
-
-<!-- Footer -->
-	<footer id="footer">
-		<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>
-		. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-	</footer>
-
-	</div>
-	</div>
-
+	
 	</div>
 
 		<!-- Scripts -->
