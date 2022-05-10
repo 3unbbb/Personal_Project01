@@ -11,7 +11,7 @@
 		<title>Editorial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
@@ -23,12 +23,13 @@
 		<div class="inner">
 
 	<!-- Header -->
-	<jsp:include page="./inc/header.jsp"></jsp:include>
+	<jsp:include page="../inc/header.jsp"></jsp:include>
 	<!-- Header -->
 	
 
 	<!-- 게시판 -->
 	<article>
+	
 <h1>Notice</h1>
 <table id="notice">
 <tr><th class="tno">No.</th>
@@ -36,20 +37,13 @@
     <th class="twrite">Writer</th>
     <th class="tdate">Date</th>
     <th class="tread">Read</th></tr>
+    
 <tr><td>15</td><td class="left" >Vivanus viveer portitor commodo.</td>
     <td>Host Admin</td><td>2012.11.06</td><td>15</td></tr>
-
-  
+    
 </table>
+    <input type = "button" value="write" onclick=" location.href ='../BoardWrite.bo';">
 
-<div class="clear"></div>
-<div id="page_control">
-<a href="#">Prev</a>
-<a href="#">1</a><a href="#">2</a><a href="#">3</a>
-<a href="#">4</a><a href="#">5</a><a href="#">6</a>
-<a href="#">7</a><a href="#">8</a><a href="#">9</a>
-<a href="#">10</a>
-<a href="#">Next</a>
 </div>
 </article>
 	<!-- 게시판 -->
@@ -67,7 +61,7 @@
 	</div>
 	
 	<span class="image object">
-		<img src="images/pic10.jpg" alt="" />
+		<img src="../images/pic10.jpg" alt="" />
 	</span>
 	</section>
 	<!-- Banner -->
@@ -94,7 +88,7 @@
 		</header>
 		<div class="posts">
 			<article>
-				<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+				<a href="#" class="image"><img src="../images/pic01.jpg" alt="" /></a>
 				<h3>Interdum aenean</h3>
 				<p>Aenean ornare velit lacus.</p>
 				<ul class="actions">
@@ -103,7 +97,7 @@
 			</article>
 			
 			<article>
-				<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+				<a href="#" class="image"><img src="../images/pic02.jpg" alt="" /></a>
 				<h3>Nulla amet dolore</h3>
 				<p>Aenean ornare velit lacus.</p>
 				<ul class="actions">
@@ -120,7 +114,7 @@
 	
 	<div class="mini-posts">
 	<article>
-		<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+		<a href="#" class="image"><img src="../images/pic07.jpg" alt="" /></a>
 		<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
 	</article>
 	
@@ -142,6 +136,7 @@
 				<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
 				Nashville, TN 00000-0000</li>
 			</ul>
+			
 	</section>
 
 	</div>
