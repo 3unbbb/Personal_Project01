@@ -29,9 +29,9 @@ public class MemberListAction implements Action {
 			
 			//페이지 이동(./member/member_list.jsp)
 			ActionForward forward = new ActionForward();
-			forward.setPath("./member/login.jsp");
+			forward.setPath("./MemberList.mm");
 			forward.setRedirect(false);
-		
+			
 		return forward;
 	}
 

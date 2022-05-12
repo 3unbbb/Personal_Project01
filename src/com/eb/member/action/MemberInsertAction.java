@@ -41,7 +41,7 @@ public class MemberInsertAction implements Action {
 		
 		//페이지 이동("./MemberList.mm")
 		ActionForward forward = new ActionForward();
-		forward.setPath("./MemberList.mm");
+		forward.setPath("./member/login.jsp");
 		forward.setRedirect(true);
 		
 		

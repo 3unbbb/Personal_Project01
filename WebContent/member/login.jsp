@@ -11,7 +11,7 @@
 		<title>Elements - Editorial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="./assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
@@ -29,9 +29,8 @@
 				</header>
 
 				<!-- Form -->
-				<h3>Form</h3>
 
-				<form method="get" action="./LoginPro.mm">
+				<form method="post" action="./LoginAction.mm">
 					<div class="row gtr-uniform">
 						<div class="col-6 col-12-xsmall">
 							<input type="text" name="id"  value="" placeholder="아이디" /><br>

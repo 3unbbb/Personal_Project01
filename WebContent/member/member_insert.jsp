@@ -25,7 +25,7 @@
 		<!-- Content -->
 			<section>
 				<header class="main">
-					<h1>Login</h1>
+					<h1>회원가입</h1>
 				</header>
 
 				<!-- Form -->
@@ -59,7 +59,7 @@
 					</div>
 				</form>
 
-
+				
 				</section>
 
 
@@ -80,4 +80,5 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+	
 </html>

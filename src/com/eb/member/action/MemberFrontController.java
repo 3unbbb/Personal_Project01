@@ -58,6 +58,7 @@ public class MemberFrontController extends HttpServlet{
 			
 			try {
 				forward = action.execute(request, response);
+				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -78,6 +79,16 @@ public class MemberFrontController extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+		}
+		
+		else if(command.equals("/member/LoginAction.mm")){
+			System.out.println("C : /LoginAction.mm 호출" );
+			//db사용 o
+			
+			//LoginAction 객체 생성
+			
+			action = new LoginAction();
 			
 		}
 		
