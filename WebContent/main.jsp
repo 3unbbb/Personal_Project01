@@ -30,7 +30,7 @@
 	<section id="banner">
 		<div class="content">
 			<header>
-				<h1>Hello~<br />
+				<h1>Hello~<br/>
 					today's new!</h1>
 				<p>A free and fully responsive site template</p>
 			</header>

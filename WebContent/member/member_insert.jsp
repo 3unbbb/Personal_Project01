@@ -31,17 +31,34 @@
 				<!-- Form -->
 				<h3>Form</h3>
 
-				<form method="get" action="./LoginPro.mm">
+				<form method="post" action="./MemberInsertAction.mm">
 					<div class="row gtr-uniform">
 						<div class="col-6 col-12-xsmall">
-							<input type="text" name="id"  value="" placeholder="아이디" /><br>
-							<input type="text" name="pass" value="" placeholder="비밀번호" />
+							아이디  <input type="text" name="id"  ><br>
+							비밀번호 <input type="password" name="pass"><br>
+							이름 <input type="text" name="name" ><br>
+							나이 <input type="text" name="age" ><br>
+							전화번호 <input type="tel" name="tel"><br>
+							이메일 <input type="email" name="email"><br>
+							회사 <input type="text" name="company"><br>
+							부서
+							<select name ="department">
+							<option>---부서를 선택하세요---</option>
+							<option value ="strategy">기획</option>
+							<option value ="hr">인사</option>
+							<option value ="account">재무/회계</option>
+							<option value ="purchase">구매/자재</option>
+							<option value ="production">생산</option>
+							<option value ="IT">IT</option>
+							<option value ="marketing">마케팅</option>
+							</select>
 							<br>
-							<input type ="submit" value ="로그인">
+							
+							<input type ="submit" value ="회원가입하기">
 						</div>
 					</div>
 				</form>
-		
+
 
 				</section>
 
