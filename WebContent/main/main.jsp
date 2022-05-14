@@ -11,7 +11,7 @@
 		<title>Editorial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
@@ -23,7 +23,7 @@
 		<div class="inner">
 
 	<!-- Header -->
-	<jsp:include page="./inc/header.jsp"></jsp:include>
+	<jsp:include page="../inc/header.jsp"></jsp:include>
 	<!-- Header -->
 	
 	<!-- news -->
@@ -42,7 +42,7 @@
 		
 	
 		<span class="image object">
-			<img src="images/pic10.jpg" alt="" />
+			<img src="../images/pic10.jpg" alt="" />
 		</span>
 	</section>
 	<!-- news -->
@@ -150,7 +150,7 @@
 					</div>
 
 	<!-- Sidebar -->
-		<jsp:include page="./inc/left.jsp"></jsp:include>
+		<jsp:include page="../inc/left.jsp"></jsp:include>
 	<!-- Sidebar -->
 
 

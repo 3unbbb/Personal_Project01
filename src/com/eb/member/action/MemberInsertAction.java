@@ -1,5 +1,7 @@
 package com.eb.member.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -38,6 +40,13 @@ public class MemberInsertAction implements Action {
 		
 		//회원가입 동작 실행
 		dao.insertMember(dto);
+		
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html; charset=UTF-8");
+		
+		out.print("<script>");
+		out.println("alert('회원가입 완료. 로그인페이지로 이동합니다.');");
+		out.print("</script>");
 		
 		//페이지 이동("./MemberList.mm")
 		ActionForward forward = new ActionForward();

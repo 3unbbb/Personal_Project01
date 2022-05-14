@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.eb.board.action.BoardWriteAction;
+
 public class MemberFrontController extends HttpServlet{
 
 	
@@ -82,7 +84,7 @@ public class MemberFrontController extends HttpServlet{
 			
 		}
 		
-		else if(command.equals("/member/LoginAction.mm")){
+		else if(command.equals("/LoginAction.mm")){
 			System.out.println("C : /LoginAction.mm 호출" );
 			//db사용 o
 			
@@ -90,11 +92,34 @@ public class MemberFrontController extends HttpServlet{
 			
 			action = new LoginAction();
 			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
+		else if(command.equals("/Logout.mm")){
+			System.out.println("C : /Logout.mm호출");
+			
+			//db사용 x
+			
+			//LogoutAction 객체 생성
+			action = new LogoutAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}else if(command.contains("/Login.mm")){
+			forward = new ActionForward();
+			forward.setPath("/member/login.jsp");
+			forward.setRedirect(false);
 		
-		
-		
+		}
 		
 		
 		

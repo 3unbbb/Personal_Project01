@@ -43,13 +43,13 @@ public class BoardFrontController extends HttpServlet{
 		Action action = null;
 		ActionForward forward = null;
 		
-		if(command.equals("/BoardWrite.bo")){
+		if(command.equals("/center/BoardWrite.bo")){
 			System.out.println("C : /BoardWrite.bo 호출");
 			System.out.println("C : DB사용 X, 정보입력 페이지(view)");
 			
 			//페이지 이동 객체 생성
 			forward = new ActionForward();
-			forward.setPath("./center/boardWrite.jsp");
+			forward.setPath("./boardWrite.jsp");
 			forward.setRedirect(false);
 			
 		}else if(command.equals("/BoardWriteAction.bo")){

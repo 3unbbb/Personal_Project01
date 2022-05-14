@@ -30,14 +30,14 @@
 
 	<!-- 게시판 -->
 	<article>
-		<h1>Notice</h1>
+		<h1>게시판</h1>
 		<table id="notice">
 			<tr>
-				<th class="tno">No.</th>
- 			 	<th class="ttitle">Title</th>
-   				<th class="twrite">Writer</th>
-   				<th class="tdate">Date</th>
-				<th class="tread">Read</th>
+				<th class="tno">글번호</th>
+ 			 	<th class="ttitle">제목</th>
+   				<th class="twrite">작성자</th>
+   				<th class="tdate">작성일</th>
+				<th class="tread">조회수</th>
 			</tr>
     
 			<tr>

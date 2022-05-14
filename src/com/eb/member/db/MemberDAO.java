@@ -145,8 +145,50 @@ public class MemberDAO {
 			}
 		
 		//getMemberList
-
 			
+		//login()
+		public int login(MemberDTO dto){
+			int result = -1;
+			
+			try {
+				//1.2. 디비연결
+				con = getCon();
+				
+				//sql작성, pstmt
+				
+				sql = "select pass from eb_member where id=?";
+				pstmt = con.prepareStatement(sql);
+				
+				//???
+				pstmt.setString(1, dto.getId());
+				
+				//sql 실행
+				rs = pstmt.executeQuery();
+				
+				//데이터 처리
+				
+				if(rs.next()){
+					if(dto.getPass().equals(rs.getString("pass"))){
+						result = 1;
+					}else{
+						result = 0; //비밀번호 다름
+					}
+				}else{
+						result = -1; // 아이디에 해당하는 비밀번호가 없음
+					}
+				
+				System.out.println("DAO : 로그인 확인 완료 result : "+ result);
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeDB();
+			}
+			return result;
+		}
+			
+		//login()
 			
 			
 			
