@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -114,6 +115,85 @@ public class BoardDAO {
 		}
 	}
 	//inSertBoard(bb) 끝
+	
+	//getBoardCount();
+		public int getBoardCount(){
+			int result = 0;
+			try {
+				//db연결
+				con = getCon();
+				
+				//sql 작성, pstmt
+				sql = "select count(num) from eb_board";
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()){
+					result = rs.getInt(1);
+				}
+				
+				System.out.println("DAO : 게시판 글 개수" + result);
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeDB();
+			}
+			
+			return result;
+		}
+	
+	//getBoardCount();
+	
+	//getBoardList();
+		public ArrayList getBoardList(){
+			ArrayList boardList = new ArrayList();
+			
+			try {
+				//1.2. db연결
+				con=getCon();
+				//3. sql, pstmt
+				sql = "select * from eb_board order by num desc limit 0.5";
+				pstmt = con.prepareStatement(sql);
+				
+				//4. 
+				rs = pstmt.executeQuery();
+				
+				//5. 데이터 처리
+				if(rs.next()){
+					BoardDTO dto = new BoardDTO();
+					
+					dto.setCompany(rs.getString("company"));
+					dto.setContent(rs.getString("content"));
+					dto.setDate(rs.getDate("date"));
+					dto.setDepartment(rs.getString("department"));
+					dto.setId(rs.getString("id"));
+					dto.setNum(rs.getInt("num"));
+					dto.setIp(rs.getString("ip"));
+					dto.setRe_lev(rs.getInt("re_lev"));
+					dto.setRe_ref(rs.getInt("re_ref"));
+					dto.setRe_seq(rs.getInt("re_seq"));
+					dto.setRead_conunt(rs.getInt("read_conunt"));
+					dto.setSubject(rs.getString("subject"));
+					
+					//Arraylist에 담기
+					boardList.add(dto);
+				}//while
+				
+				System.out.println("DAO : 게시판 글 전체 목록 저장 완료");
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeDB();
+			}
+			return boardList;
+		}
+		
+		
+	//getBoardList();
+	
 	
 	
 	

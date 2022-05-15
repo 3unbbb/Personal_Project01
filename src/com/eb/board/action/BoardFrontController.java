@@ -52,7 +52,7 @@ public class BoardFrontController extends HttpServlet{
 			forward.setPath("./boardWrite.jsp");
 			forward.setRedirect(false);
 			
-		}else if(command.equals("/BoardWriteAction.bo")){
+		}else if(command.equals("/center/BoardWriteAction.bo")){
 			System.out.println("C : /BoardWriteAction.bo호출");
 			System.out.println("C : DB사용 O, 페이지 이동");
 			
@@ -65,6 +65,12 @@ public class BoardFrontController extends HttpServlet{
 			}
 			
 			
+		}else if(command.equals("/center/BoardList.bo")){
+			System.out.println("C : /center/BoardList.bo 호출");
+			System.out.println("db사용 , 페이지 이동 ");
+			//BoardListAction 객체 생성
+			
+			action = new BoardListAction();
 		}
 		
 		

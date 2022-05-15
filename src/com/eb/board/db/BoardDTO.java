@@ -1,5 +1,7 @@
 package com.eb.board.db;
 
+import java.sql.Date;
+
 public class BoardDTO {
 	//eb_board 테이블의정보를 저장/ 전송하는 객체
 	
@@ -15,7 +17,7 @@ public class BoardDTO {
 	private int re_lev;
 	private int re_seq;
 	
-	private int date;
+	private Date date;
 	private String ip;
 	private String file;
 	
@@ -80,10 +82,10 @@ public class BoardDTO {
 	public void setRe_seq(int re_seq) {
 		this.re_seq = re_seq;
 	}
-	public int getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(int date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	public String getIp() {

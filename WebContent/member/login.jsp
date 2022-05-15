@@ -40,6 +40,9 @@
 						</div>
 					</div>
 				</form>
+	<ul class="icons">
+		<li><a href="./MemberInsert.mm"><span class= "button">회원가입</span></a></li>
+	</ul>
 		
 
 				</section>

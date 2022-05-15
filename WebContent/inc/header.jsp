@@ -7,13 +7,13 @@
 	<% if(session.getAttribute("id") == null) {
 		%>
 	<ul class="icons">
-		<li><a href="./Login.mm"><span class="button">LOGIN</span></a></li>
+		<li><a href="./Login.mm"><span class="button">로그인</span></a></li>
 		<li><a href="./MemberInsert.mm"><span class= "button">회원가입</span></a></li>
 	</ul>
 	<%} else{ %>
 	
 		<ul class="icons">
-			<li><a href="./Logout.mm"><span class="button">LOGOUT</span></a></li>
+			<li><a href="./Logout.mm"><span class="button">로그아웃</span></a></li>
 		</ul>
 		<% } %>
 	</header>

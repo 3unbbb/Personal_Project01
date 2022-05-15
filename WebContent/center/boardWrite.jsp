@@ -54,7 +54,7 @@
 			<td><textarea rows = "25" cols="27" name = "content"></textarea></td>
 			</tr>
 			<tr>
-			<td> 사진</td>
+			<td> 파일</td>
 			<td><input type ="file"></td>
 			</tr>
 			
