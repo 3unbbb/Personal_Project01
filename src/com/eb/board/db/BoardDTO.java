@@ -6,11 +6,11 @@ public class BoardDTO {
 	//eb_board 테이블의정보를 저장/ 전송하는 객체
 	
 	private int num;
-	private String id;
+	private String b_id;
 	private String subject;
 	private String content;
-	private String company;
-	private String department;
+	private String b_company;
+	private String b_department;
 	
 	private int read_conunt;
 	private int re_ref;
@@ -22,16 +22,16 @@ public class BoardDTO {
 	private String file;
 	
 	public String getCompany() {
-		return company;
+		return b_company;
 	}
 	public void setCompany(String company) {
-		this.company = company;
+		this.b_company = company;
 	}
 	public String getDepartment() {
-		return department;
+		return b_department;
 	}
 	public void setDepartment(String department) {
-		this.department = department;
+		this.b_department = department;
 	}
 	
 	public int getNum() {
@@ -41,10 +41,10 @@ public class BoardDTO {
 		this.num = num;
 	}
 	public String getId() {
-		return id;
+		return b_id;
 	}
 	public void setId(String id) {
-		this.id = id;
+		this.b_id = id;
 	}
 	public String getSubject() {
 		return subject;

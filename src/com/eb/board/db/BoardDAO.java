@@ -82,7 +82,7 @@ public class BoardDAO {
 			
 			//글쓰기
 			//DB는 이미 연결 되어 있으니까 3.SQL 작성, pstmt 객체
-			sql = "insert into eb_board(num,id,company, department,subject,content,"
+			sql = "insert into eb_board(num,b_id,b_company,b_department,subject,content,"
 					+"readcount,re_ref,re_lev,re_seq,date,ip,file)"
 					+"values(?,?,?,?,?,?,?,?,?,?,now(),?,?)";
 			

@@ -32,21 +32,13 @@ public class LoginAction implements Action {
 			int result = dao.login(dto);
 			
 			//result 결과에 따라 동작 설정
-			PrintWriter out = response.getWriter();
-			response.setContentType("text/html; charset=UTF-8");
 
 			if(result == -1 ){	//비회원
-				out.print("<script>");
-				out.println("alert('비회원.');");
-				out.println("location.href='./member/login.jsp';");
-				out.print("</script>");
+			
 				return null;
 				
 			}else if(result == 0){
-				out.print("<script>");
-				out.println("alert('비밀번호 오류.');");
-				out.println("location.href='./member/login.jsp';");
-				out.print("</script>");
+				
 				return null;
 				
 			}else{ //result == 1 \
@@ -56,7 +48,7 @@ public class LoginAction implements Action {
 
 				//페이지 이동
 				ActionForward forward = new ActionForward();
-				forward.setPath("./main.jsp");
+				forward.setPath("./main/main.jsp");
 				forward.setRedirect(false);
 				return forward;
 			}
