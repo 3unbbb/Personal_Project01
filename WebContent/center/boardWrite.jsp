@@ -24,7 +24,7 @@
 		<div class="inner">
 
 	<!-- Header -->
-		<jsp:include page="../inc/header.jsp"></jsp:include>
+		<jsp:include page="../inc/top.jsp"></jsp:include>
 	<!-- Header -->
 <% //  BoardDTO dto = (BoardDTO)request.getAttribute("dto"); %>
 

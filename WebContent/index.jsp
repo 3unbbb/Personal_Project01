@@ -8,12 +8,12 @@
    //   (주소줄에 jsp 주소가 노출된경우 잘못된 구조)
    
 
-//response.sendRedirect("./main/main.jsp");
+//response.sendRedirect("main/main.jsp");
   
  // response.sendRedirect("./MemberInsert.mm");
  //response.sendRedirect("./MemberList.mm");
- //response.sendRedirect("./Login.mm");
- response.sendRedirect("./BoardWrite.bo");
+ response.sendRedirect("./Login.mm");
+ //response.sendRedirect("./BoardWrite.bo");
 
 
 

@@ -18,7 +18,7 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="./Main.ma">MAIN</a></li>
+										<li><a href="./main/main.jsp">MAIN</a></li>
 										<li><a href="./center/notice.jsp">BOARD</a></li>
 
 										<li><a href="#">Etiam Dolore</a></li>
