@@ -25,6 +25,7 @@ public class LoginAction implements Action {
 			dto.setPass(request.getParameter("pass"));
 			
 			
+			
 			//전달받은 정보 db와 비교 => dao 객체 사용
 			MemberDAO dao = new MemberDAO();
 			

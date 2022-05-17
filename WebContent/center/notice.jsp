@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>    
 <!--
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -27,7 +29,7 @@
 	<jsp:include page="../inc/header.jsp"></jsp:include>
 	<!-- Header -->
 	
-
+	<input type = "hidden" value = "<%= session.getAttribute("id")%>">
 	<!-- 게시판 -->
 	<article>
 		<h1>게시판</h1>

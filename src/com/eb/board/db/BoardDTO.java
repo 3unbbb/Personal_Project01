@@ -21,16 +21,16 @@ public class BoardDTO {
 	private String ip;
 	private String file;
 	
-	public String getCompany() {
+	public String getB_Company() {
 		return b_company;
 	}
-	public void setCompany(String company) {
+	public void setB_Company(String company) {
 		this.b_company = company;
 	}
-	public String getDepartment() {
+	public String getB_Department() {
 		return b_department;
 	}
-	public void setDepartment(String department) {
+	public void setB_Department(String department) {
 		this.b_department = department;
 	}
 	
@@ -40,10 +40,10 @@ public class BoardDTO {
 	public void setNum(int num) {
 		this.num = num;
 	}
-	public String getId() {
+	public String getB_Id() {
 		return b_id;
 	}
-	public void setId(String id) {
+	public void setB_Id(String id) {
 		this.b_id = id;
 	}
 	public String getSubject() {

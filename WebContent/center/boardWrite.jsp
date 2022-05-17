@@ -1,3 +1,4 @@
+<%@page import="com.eb.board.db.BoardDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
@@ -11,7 +12,7 @@
 		<title>글쓰기</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="./assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
@@ -25,25 +26,29 @@
 	<!-- Header -->
 		<jsp:include page="../inc/header.jsp"></jsp:include>
 	<!-- Header -->
+<% //  BoardDTO dto = (BoardDTO)request.getAttribute("dto"); %>
 
 	<!-- Content -->
 		<section>
 			<header class="main">
+			<%-- <input type = "text" value = "<%=dto.getB_Id() %>" >
+				<input type = "text" value = "<%=dto.getB_Company() %>" >
+				<input type = "text" value = "<%=dto.getB_Department() %>" > --%>
 				<h1>글쓰기 페이지</h1>
 			</header>
 	<form action ="./BoardWriteAction.bo" method = "post">		
 	<table>
 			<tr>
 			<td> 글쓴이</td>
-			<td><input type = "text" name = "id" size ="5"></td>
+			<td><input type = "text" name = "b_id" value = "${dto.getB_Id() }" disabled="disabled"></td>
 			</tr>
 			<tr>
 			<td> 회사</td>
-			<td><input type = "text" name = "company" size ="5"></td>
+			<td><input type = "text" name = "b_company" value = "${dto.getB_Company() }" disabled="disabled"></td>
 			</tr>
 			<tr>
 			<td> 부서</td>
-			<td><input type = "text" name = "department" size ="5"></td>
+			<td><input type = "text" name = "b_department" value ="${dto.getB_Department() }" disabled="disabled"></td>
 			</tr>
 			<tr>
 			<td> 제목</td>

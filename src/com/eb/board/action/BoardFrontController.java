@@ -45,12 +45,16 @@ public class BoardFrontController extends HttpServlet{
 		
 		if(command.equals("/BoardWrite.bo")){
 			System.out.println("C : /BoardWrite.bo 호출");
-			System.out.println("C : DB사용 X, 정보입력 페이지(view)");
+			System.out.println("C : DB사용 o, 정보입력 페이지(view)");
 			
-			//페이지 이동 객체 생성
-			forward = new ActionForward();
-			forward.setPath("./boardWrite.jsp");
-			forward.setRedirect(false);
+			action = new BoardMemberAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	
 			
 		}else if(command.equals("/BoardWriteAction.bo")){
 			System.out.println("C : /BoardWriteAction.bo호출");
@@ -66,11 +70,17 @@ public class BoardFrontController extends HttpServlet{
 			
 			
 		}else if(command.equals("/BoardList.bo")){
-			System.out.println("C : /center/BoardList.bo 호출");
+			System.out.println("C : /BoardList.bo 호출");
 			System.out.println("db사용 , 페이지 이동 ");
 			//BoardListAction 객체 생성
 			
 			action = new BoardListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		

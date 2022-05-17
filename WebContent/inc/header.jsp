@@ -3,7 +3,7 @@
  	<header id="header">
 		<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
 	
-	
+
 	<% if(session.getAttribute("id") == null) {
 		%>
 	<ul class="icons">

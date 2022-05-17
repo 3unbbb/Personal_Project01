@@ -11,6 +11,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.eb.board.db.BoardDTO;
+
 public class MemberDAO {
 	
 	//디비에 연결된 eb_member 테이블과 관련된 모든 동작을 처리
@@ -150,6 +152,7 @@ public class MemberDAO {
 		public int login(MemberDTO dto){
 			int result = -1;
 			
+			
 			try {
 				//1.2. 디비연결
 				con = getCon();
@@ -170,12 +173,14 @@ public class MemberDAO {
 				if(rs.next()){
 					if(dto.getPass().equals(rs.getString("pass"))){
 						result = 1;
+						
 					}else{
 						result = 0; //비밀번호 다름
 					}
 				}else{
 						result = -1; // 아이디에 해당하는 비밀번호가 없음
 					}
+				
 				
 				System.out.println("DAO : 로그인 확인 완료 result : "+ result);
 				
@@ -190,7 +195,48 @@ public class MemberDAO {
 			
 		//login()
 			
+		//getBoardMember()
+		public BoardDTO getBoardMember(String id){
+			BoardDTO dto = null;
+			try {
+				
+				//db연결
+				con = getCon();
+				
+				//sql , pstmt
+				sql = "select * from eb_member "
+						+ "where id = ?";
+				
+				pstmt = con.prepareStatement(sql);
+				
+				//???
+				pstmt.setString(1, id);
+				
+				//쿼리 실행
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()){
+					dto = new BoardDTO();
+					
+					dto.setB_Company(rs.getString("company"));
+					dto.setB_Id(rs.getString("id"));
+					dto.setB_Department(rs.getString("department"));
+				}
+				
+				System.out.println("DAO : 회원정보 1개 BoardDTO에 저장완료");
+				
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeDB();
+			}
 			
+			return dto;
+		}
+	
+	//getBoardMember()	
 			
 			
 			
