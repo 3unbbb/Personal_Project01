@@ -75,7 +75,7 @@ public class BoardDAO {
 			con = getCon();
 			
 			//2. sql작성(글번호 계산) & pstmt 객체
-			sql = "select max(num) form eb_board";
+			sql = "select max(num) from eb_board";
 			pstmt = con.prepareStatement(sql);
 			//3. sql 실행
 			rs = pstmt.executeQuery();
@@ -90,7 +90,7 @@ public class BoardDAO {
 			//글쓰기
 			//DB는 이미 연결 되어 있으니까 3.SQL 작성, pstmt 객체
 			sql = "insert into eb_board(num,b_id,b_company,b_department,subject,content,"
-					+"readcount,re_ref,re_lev,re_seq,date,ip,file)"
+					+"readcount,re_ref,re_lev,re_seq,date,ip,file) "
 					+"values(?,?,?,?,?,?,?,?,?,?,now(),?,?)";
 			
 			pstmt = con.prepareStatement(sql);
@@ -112,7 +112,7 @@ public class BoardDAO {
 			
 			//4. sql 실행
 			pstmt.executeUpdate();		//insert문은 executeUpdate 사용
-			System.out.println("DAO : 글쓰기 완");
+			System.out.println("DAO : 글 DB저장 완");
 			
 			
 		} catch (Exception e) {

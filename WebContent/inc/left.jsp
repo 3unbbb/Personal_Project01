@@ -18,18 +18,21 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="./main/main.jsp">MAIN</a></li>
-										<li><a href="./center/notice.jsp">BOARD</a></li>
+										<li><a href="./main/main.jsp">Home</a></li>
+										<li><a href="./BoardList.bo">전체게시판</a></li>
 
+										<li class="opener"> 직무별 게시판</li>
+											<ul>
+												<li><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li><a href="#">4</a></li>
+												<li><a href="#">5</a></li>
+											</ul>
+										
 										<li><a href="#">Etiam Dolore</a></li>
 										<li><a href="#">Adipiscing</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
+										
 										<li><a href="#">Maximus Erat</a></li>
 
 									</ul>

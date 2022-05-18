@@ -17,10 +17,10 @@ public class BoardWriteAction implements Action{
 		
 		//전달된 정보를 저장(Board DTO)
 		BoardDTO dto = new BoardDTO();
-		dto.setCompany(request.getParameter("company"));
+		dto.setB_Company(request.getParameter("b_company"));
 		dto.setContent(request.getParameter("content"));
-		dto.setDepartment(request.getParameter("department"));
-		dto.setId(request.getParameter("id"));
+		dto.setB_Department(request.getParameter("b_department"));
+		dto.setB_Id(request.getParameter("b_id"));
 		dto.setSubject(request.getParameter("subject"));
 		
 		dto.setIp(request.getRemoteAddr());

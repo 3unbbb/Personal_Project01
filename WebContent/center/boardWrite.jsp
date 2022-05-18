@@ -39,28 +39,24 @@
 	<form action ="./BoardWriteAction.bo" method = "post">		
 	<table>
 			<tr>
-			<td> 글쓴이</td>
-			<td><input type = "text" name = "b_id" value = "${dto.getB_Id() }" disabled="disabled"></td>
+				<td> 글쓴이</td>
+				<td><input type = "text" name = "b_id" value = "${dto.getB_Id() }" disabled="disabled"></td>
+				<td> 회사</td>
+				<td><input type = "text" name = "b_company" value = "${dto.getB_Company() }" disabled="disabled"></td>
 			</tr>
-			<tr>
-			<td> 회사</td>
-			<td><input type = "text" name = "b_company" value = "${dto.getB_Company() }" disabled="disabled"></td>
-			</tr>
-			<tr>
-			<td> 부서</td>
-			<td><input type = "text" name = "b_department" value ="${dto.getB_Department() }" disabled="disabled"></td>
-			</tr>
+
+
 			<tr>
 			<td> 제목</td>
-			<td><input type = "text" name = "subject" size ="5"></td>
+			<td colspan = "3"><input type = "text" name = "subject" size ="5"></td>
 			</tr>
 			<tr>
 			<td> 내용</td>
-			<td><textarea rows = "25" cols="27" name = "content"></textarea></td>
+			<td colspan = "3"><textarea rows = "25" cols="27" name = "content"></textarea></td>
 			</tr>
 			<tr>
 			<td> 파일</td>
-			<td><input type ="file"></td>
+			<td colspan = "3"><input type ="file"></td>
 			</tr>
 			
 			
