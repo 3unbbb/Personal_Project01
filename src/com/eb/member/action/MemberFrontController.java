@@ -114,7 +114,7 @@ public class MemberFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			
-		}else if(command.contains("/Login.mm")){
+		}else if(command.equals("/Login.mm")){
 			forward = new ActionForward();
 			forward.setPath("./member/login.jsp");
 			forward.setRedirect(false);

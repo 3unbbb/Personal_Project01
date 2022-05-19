@@ -66,8 +66,8 @@ public class BoardDAO {
 	
 
 	
-	//inSertBoard(bb) 시작
-	public void insertBoard(BoardDTO bb){
+	//insertBoard(bb) 시작
+	public void insertBoard(BoardDTO dto){
 		int num = 0; //글번호 저장 변수
 		try {
 			
@@ -90,25 +90,25 @@ public class BoardDAO {
 			//글쓰기
 			//DB는 이미 연결 되어 있으니까 3.SQL 작성, pstmt 객체
 			sql = "insert into eb_board(num,b_id,b_company,b_department,subject,content,"
-					+"readcount,re_ref,re_lev,re_seq,date,ip,file) "
+					+"read_count,re_ref,re_lev,re_seq,date,ip,file) "
 					+"values(?,?,?,?,?,?,?,?,?,?,now(),?,?)";
 			
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setInt(1, num);
-			pstmt.setString(2, bb.getB_Id());
-			pstmt.setString(3, bb.getB_Company());
-			pstmt.setString(4, bb.getB_Department());
-			pstmt.setString(5, bb.getSubject());
-			pstmt.setString(6, bb.getContent());
+			pstmt.setString(2, dto.getB_Id());
+			pstmt.setString(3, dto.getB_Company());
+			pstmt.setString(4, dto.getB_Department());
+			pstmt.setString(5, dto.getSubject());
+			pstmt.setString(6, dto.getContent());
 			
 			pstmt.setInt(7, 0);
 			pstmt.setInt(8, num);
 			pstmt.setInt(9, 0);
 			pstmt.setInt(10, 0);
 
-			pstmt.setString(11, bb.getIp());
-			pstmt.setString(12, bb.getFile());
+			pstmt.setString(11, dto.getIp());
+			pstmt.setString(12, dto.getFile());
 			
 			//4. sql 실행
 			pstmt.executeUpdate();		//insert문은 executeUpdate 사용
@@ -121,21 +121,231 @@ public class BoardDAO {
 			closeDB();
 		}
 	}
-	//inSertBoard(bb) 끝
+	//insertBoard(bb) 끝
 
 	public int getBoardCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = 0;
+		
+		try {
+			//디비연결
+			con = getCon();
+			
+			//sql
+			sql = "select count(num) from eb_board";
+			pstmt = con.prepareStatement(sql);
+			
+			//sql 실행
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+				
+				result = rs.getInt(1);	//첫 번째 결과값을 result에 넣음 = count한 값을 넣음
+				
+			}
+			
+			System.out.println("DAO : 게시판 글 개수 " + result +"개");
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeDB();
+		}
+				
+		return result;
 	}
-
-	public List getBoardList(int startRow, int pageSize) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	//getboardList();
+	public ArrayList getBoardList(){
+		
+		//글정보를 가져올 List 생성
+		ArrayList boardList = new ArrayList();
+		
+		try {
+			
+			//DB연결
+			con = getCon();
+			
+			//sql & pstmt
+			sql = "select * from eb_board order by num desc limit 0,5";
+			pstmt = con.prepareStatement(sql);
+			
+			
+			//sql 실행
+			rs = pstmt.executeQuery();
+			
+			//데이터처리
+			
+			while(rs.next()){
+				BoardDTO dto = new BoardDTO();
+				dto.setB_Company(rs.getString("b_company"));
+				dto.setB_Department(rs.getString("b_department"));
+				dto.setB_Id(rs.getString("b_id"));
+				dto.setContent(rs.getString("content"));
+				dto.setDate(rs.getDate("date"));
+				dto.setFile(rs.getString("file"));
+				dto.setIp(rs.getString("ip"));
+				dto.setNum(rs.getInt("num"));
+				dto.setRe_lev(rs.getInt("re_lev"));
+				dto.setRe_ref(rs.getInt("re_ref"));
+				dto.setRe_seq(rs.getInt("re_seq"));
+				dto.setRead_count(rs.getInt("read_count"));
+				dto.setSubject(rs.getString("subject"));
+				
+				boardList.add(dto);
+				
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeDB();
+		}
+		
+		return boardList;
+		
 	}
 	
 	
+	//getboardList();
+	
+	//getboardList(int startRow, int endRow);
+	public ArrayList getBoardList(int startRow, int pageSize){
+		
+		//글정보를 가져올 List 생성
+		ArrayList boardList = new ArrayList();
+		
+		try {
+			
+			//DB연결
+			con = getCon();
+			
+			//sql & pstmt
+			sql = "select * from eb_board order by re_ref desc, re_seq asc limit ?,?";
+			//limit ?,? >>>>> 데이터 가져올 때 시작& 끝
+			pstmt = con.prepareStatement(sql);
+			
+			//???
+			pstmt.setInt(1, startRow-1);
+			pstmt.setInt(2, pageSize);
+			
+			//sql 실행
+			rs = pstmt.executeQuery();
+			
+			//데이터처리
+			
+			while(rs.next()){
+				BoardDTO dto = new BoardDTO();
+				dto.setB_Company(rs.getString("b_company"));
+				dto.setB_Department(rs.getString("b_department"));
+				dto.setB_Id(rs.getString("b_id"));
+				dto.setContent(rs.getString("content"));
+				dto.setDate(rs.getDate("date"));
+				dto.setFile(rs.getString("file"));
+				dto.setIp(rs.getString("ip"));
+				dto.setNum(rs.getInt("num"));
+				dto.setRe_lev(rs.getInt("re_lev"));
+				dto.setRe_ref(rs.getInt("re_ref"));
+				dto.setRe_seq(rs.getInt("re_seq"));
+				dto.setRead_count(rs.getInt("read_count"));
+				dto.setSubject(rs.getString("subject"));
+				
+				boardList.add(dto);
+				
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeDB();
+		}
+		
+		return boardList;
+		
+	}
 	
 	
+	//getboardList();
+	
+	//updateReadCount(num)
+	public void updateReadCount(int num){
+		
+		try {
+			con = getCon();
+			
+			sql = "update eb_board set read_count = read_count+1  where num = ?";
+			pstmt = con.prepareStatement(sql);
+			
+			//??
+			pstmt.setInt(1, num);
+			
+			pstmt.executeUpdate();
+			System.out.println("DAO : " + num + "번글 조회수 1 증가");
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeDB();
+		}
+		
+	}
+	
+	//updateReadCount(num)
+	
+	//getBoard(num)
+	public BoardDTO getBoard(int num){
+		BoardDTO dto = null;
+		
+		try {
+			// 1.2. 디비연결
+			con = getCon();
+			// 3. sql 작성 & pstmt 객체
+			sql = "select * from eb_board where num = ?";
+			pstmt = con.prepareStatement(sql);
+			
+			// ???
+			pstmt.setInt(1, num);
+			
+			// 4. sql 실행
+			rs = pstmt.executeQuery();
+			
+			// 5. 데이터 처리
+			if(rs.next()){
+				dto = new BoardDTO();
+				
+				dto.setContent(rs.getString("content"));
+				dto.setDate(rs.getDate("date"));
+				dto.setFile(rs.getString("file"));
+				dto.setIp(rs.getString("ip"));
+				dto.setNum(rs.getInt("num"));
+				dto.setRe_lev(rs.getInt("re_lev"));
+				dto.setRe_ref(rs.getInt("re_ref"));
+				dto.setRe_seq(rs.getInt("re_seq"));
+				dto.setRead_count(rs.getInt("read_count"));
+				dto.setSubject(rs.getString("subject"));
+				dto.setB_Company(rs.getString("b_company"));
+				dto.setB_Department(rs.getString("b_department"));
+				dto.setB_Id(rs.getString("b_id"));
+				
+			}
+			System.out.println(" DAO : 게시판 글 1개 저장완료 ");	
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeDB();
+		}
+	
+		return dto;
+	
+	}
+	//getBoard(num)
 	
 	
 }

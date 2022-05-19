@@ -12,7 +12,7 @@ public class BoardDTO {
 	private String b_company;
 	private String b_department;
 	
-	private int read_conunt;
+	private int read_count;
 	private int re_ref;
 	private int re_lev;
 	private int re_seq;
@@ -58,11 +58,11 @@ public class BoardDTO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public int getRead_conunt() {
-		return read_conunt;
+	public int getRead_count() {
+		return read_count;
 	}
-	public void setRead_conunt(int read_conunt) {
-		this.read_conunt = read_conunt;
+	public void setRead_count(int read_count) {
+		this.read_count = read_count;
 	}
 	public int getRe_ref() {
 		return re_ref;

@@ -14,7 +14,6 @@ public class MemberInsertAction implements Action {
 	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 			
-			
 		System.out.println("M : MemberInsertAction-execute() 호출");
 		
 		//회원 추가
@@ -41,16 +40,14 @@ public class MemberInsertAction implements Action {
 		//회원가입 동작 실행
 		dao.insertMember(dto);
 		
-		PrintWriter out = response.getWriter();
-		response.setContentType("text/html; charset=UTF-8");
-		
-		out.print("<script>");
-		out.println("alert('회원가입 완료. 로그인페이지로 이동합니다.');");
-		out.print("</script>");
+/*		PrintWriter out = response.getWriter();
+		out.println("<script>alert('회원가입 완료. 로그인페이지로 이동합니다.');</script>");
+		out.flush();*/
+
 		
 		//페이지 이동("./MemberList.mm")
 		ActionForward forward = new ActionForward();
-		forward.setPath("./member/login.jsp");
+		forward.setPath("./Login.mm");
 		forward.setRedirect(true);
 		
 		

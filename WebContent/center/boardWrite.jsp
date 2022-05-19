@@ -36,7 +36,9 @@
 				<input type = "text" value = "<%=dto.getB_Department() %>" > --%>
 				<h1>글쓰기 페이지</h1>
 			</header>
-	<form action ="./BoardWriteAction.bo" method = "post">		
+			
+	<form action ="./BoardWriteAction.bo?b_id=${dto.getB_Id() }&b_company=${dto.getB_Company() }&b_department=${dto.getB_Department() }" method = "post">
+	
 	<table>
 			<tr>
 				<td> 글쓴이</td>

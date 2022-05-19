@@ -23,6 +23,9 @@ public class BoardWriteAction implements Action{
 		dto.setB_Id(request.getParameter("b_id"));
 		dto.setSubject(request.getParameter("subject"));
 		
+		System.out.println(request.getParameter("b_id"));
+		System.out.println(request.getParameter("subject"));
+		
 		dto.setIp(request.getRemoteAddr());
 		System.out.println("M : "+ dto);
 		

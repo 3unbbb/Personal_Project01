@@ -20,14 +20,14 @@ public class LogoutAction implements Action {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html; charset=UTF-8");
 		
-		out.print("<script>");
+		out.println("<script>");
 		out.println("alert('로그아웃 하셨습니다. 메인페이지로 이동합니다.');");
-		out.print("</script>");
+		out.println("</script>");
 		
 		
 		
 		ActionForward forward= new ActionForward();
-		forward.setPath("./main.jsp");
+		forward.setPath("./main/main.jsp");
 		forward.setRedirect(true);
 		
 		return forward;

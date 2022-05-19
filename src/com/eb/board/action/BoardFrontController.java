@@ -81,6 +81,21 @@ public class BoardFrontController extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			
+		}else if(command.equals("/BoardContent.bo")){
+			System.out.println("C: BoardContent.bo 호출");
+			
+			action = new BoardContentAction();
+			
+			try {
+				
+				forward = action.execute(request, response);
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		

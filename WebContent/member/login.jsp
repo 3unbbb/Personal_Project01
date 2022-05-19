@@ -23,31 +23,28 @@
 		<div class="inner">
 								
 		<!-- Content -->
-			<section>
-				<header class="main">
-					<h1>Login</h1>
-				</header>
+		<section>
+			<header class="main">
+				<h1>Login</h1>
+			</header>
 
-				<!-- Form -->
+		<!-- Form -->
 
-				<form method="post" action="./LoginAction.mm">
-					<div class="row gtr-uniform">
-						<div class="col-6 col-12-xsmall">
-							<input type="text" name="id"  value="" placeholder="아이디" /><br>
-							<input type="text" name="pass" value="" placeholder="비밀번호" />
-							<br>
-							<input type ="submit" value ="로그인">
-						</div>
-					</div>
-				</form>
-	<ul class="icons">
-		<li><a href="./MemberInsert.mm"><span class= "button">회원가입</span></a></li>
-	</ul>
+		<form method="post" action="./LoginAction.mm">
+			<div class="row gtr-uniform">
+				<div class="col-6 col-12-xsmall">
+					<input type="text" name="id"  value="" placeholder="아이디" /> <br>
+					<input type="text" name="pass" value="" placeholder="비밀번호" /> <br>
+					<input type ="submit" value ="로그인">
+				</div>
+			</div>
+		</form>
+		<ul class="icons">
+			<li><a href="./MemberInsert.mm"><span class= "button">회원가입</span></a></li>
+		</ul>
 		
 
-				</section>
-
-
+			</section>
 
 			</div>
 			</div>
