@@ -119,6 +119,16 @@ public class BoardFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			
+		}else if(command.equals("./BoardDelte.bo")){
+			System.out.println("/BoardDelte.bo 호출");
+			action = new BoardDeleteAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		
