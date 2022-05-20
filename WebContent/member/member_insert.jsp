@@ -9,6 +9,46 @@
 <html>
 	<head>
 		<title>Elements - Editorial by HTML5 UP</title>
+		
+		<script type="text/javascript">
+			
+			function checkInsert(){	
+				
+				if(document.userInsert.id.value == ""){
+					alert('아이디를 입력해주세요');
+					form.id.focus();
+					return false;
+					
+				} if(document.userInsert.pass.value ==""){
+					alert("비밀번호를 입력해주세요");
+					form.pass.focus();
+					return false;
+				}if(document.userInsert.name.value ==""){
+					alert("이름을 입력해주세요");
+					form.name.focus();
+					return false;
+				}if(document.userInsert.age.value ==""){
+					alert("나이를 입력해주세요");
+					form.age.focus();
+					return false;
+				}if(document.userInsert.tel.value ==""){
+					alert("전화번호를 입력해주세요");
+					form.tel.focus();
+					return false;
+				}if(document.userInsert.email.value ==""){
+					alert("이메일을 입력해주세요");
+					form.email.focus();
+					return false;
+				}if(document.userInsert.company.value ==""){
+					alert("회사를 입력해주세요");
+					form.company.focus();
+					return false;
+				}
+	
+			}
+		</script>
+		
+		
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
@@ -31,7 +71,7 @@
 		<!-- Form -->
 			<h3>Form</h3>
 
-			<form method="post" action="./MemberInsertAction.mm">
+			<form method="post" action="./MemberInsertAction.mm" name ="userInsert" onsubmit="return checkInsert();">
 				<div class="row gtr-uniform">
 					<div class="col-6 col-12-xsmall">
 						아이디  <input type="text" name="id"  ><br>

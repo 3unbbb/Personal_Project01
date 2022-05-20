@@ -347,5 +347,90 @@ public class BoardDAO {
 	}
 	//getBoard(num)
 	
+	//modifyBoard(num)
+	public BoardDTO modifyBoard(int num){
+		BoardDTO dto = null;
+		try {
+			//디비연결
+			con=getCon();
+			
+			//sql & psmtm
+			sql ="select * from eb_board where num=?";
+			pstmt = con.prepareStatement(sql);
+			
+			//??
+			pstmt.setInt(1, num);
+			
+			//쿼리 실행
+			rs = pstmt.executeQuery();
+			
+			//데이터 처리
+			if(rs.next()){
+				dto = new BoardDTO();
+				
+				dto.setContent(rs.getString("content"));
+				dto.setDate(rs.getDate("date"));
+				dto.setFile(rs.getString("file"));
+				dto.setIp(rs.getString("ip"));
+				dto.setNum(rs.getInt("num"));
+				dto.setRe_lev(rs.getInt("re_lev"));
+				dto.setRe_ref(rs.getInt("re_ref"));
+				dto.setRe_seq(rs.getInt("re_seq"));
+				dto.setRead_count(rs.getInt("read_count"));
+				dto.setSubject(rs.getString("subject"));
+				dto.setB_Company(rs.getString("b_company"));
+				dto.setB_Department(rs.getString("b_department"));
+				dto.setB_Id(rs.getString("b_id"));
+				
+				
+			}
+			System.out.println("게시판 "+num+"번 글 조회 완료");
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeDB();
+		}
+		
+		return dto;
+	}
+	
+	
+	//modifyBoard(num)
+	
+	//updateBoard(num, dto)
+	public void updateBoard(int num, BoardDTO dto){
+		try {
+		
+		//1. 디비연결
+		con = getCon();
+		
+		sql = "update eb_board "
+				+ "set subject =?, content=?, file=? "
+				+ "where num= ?";
+
+		pstmt = con.prepareStatement(sql);
+		
+
+		pstmt.setString(1, dto.getSubject());
+		pstmt.setString(2, dto.getContent());
+		pstmt.setString(3, dto.getFile());
+		pstmt.setInt(4, num);
+		
+		//4. sql 실행
+		pstmt.executeUpdate();		//insert문은 executeUpdate 사용
+		System.out.println("DAO : 글 DB 수정본 저장 완");
+		
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			closeDB();
+		}
+	
+	}	
+	//updateBoard(num, dto)
+	
 	
 }

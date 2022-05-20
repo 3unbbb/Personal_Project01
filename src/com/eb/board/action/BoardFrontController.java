@@ -39,7 +39,7 @@ public class BoardFrontController extends HttpServlet{
 		
 	//2. 가상주소 매핑//
 	
-		System.out.println("C : 가상주소 매핑시작");
+		System.out.println("C : 2. 가상주소 매핑시작");
 		Action action = null;
 		ActionForward forward = null;
 		
@@ -96,11 +96,34 @@ public class BoardFrontController extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}else if(command.equals("/BoardModify.bo")){
+			System.out.println("C : /BoardModify.bo 호출");
+			
+			action = new BoardModifyAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else if(command.equals("/BoardUpdateAction.bo")){
+			System.out.println("/BoardUpdateAction.bo 호출");
+			
+			action = new BoardUpdateAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
 		
 		
 		
-		System.out.println("C : 가상주소 매핑끝");
+		System.out.println("C : 2. 가상주소 매핑끝");
 	//2. 가상주소 매핑//
 		
 	//3. 페이지 이동//	

@@ -12,23 +12,24 @@
 		<title>Elements - Editorial by HTML5 UP</title>
 		
 		
-		<script type= "text/javascript">
+		<script type="text/javascript">
 			
-			function checkLogin()
-			{	
-				if(!document.userInfo.id.value){
+			function checkLogin(){	
+				
+				if(document.userInfo.id.value == ""){
 					alert('아이디를 입력해주세요');
 					form.id.focus();
 					return false;
-				}else if(!document.userInfo.pass.value){
+					
+				} if(document.userInfo.pass.value ==""){
 					alert("비밀번호를 입력해주세요");
 					form.pass.focus();
 					return false;
 				}
-				return true;	
+	
 			}
-		
 		</script>
+		
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
@@ -50,7 +51,7 @@
 
 		<!-- Form -->
 
-		<form method="post" action="./LoginAction.mm" name = "userInfo" onsubmit="return checkLogin()">
+		<form method="post" action="./LoginAction.mm" name = "userInfo" onsubmit="return checkLogin();">
 			<div class="row gtr-uniform">
 				<div class="col-6 col-12-xsmall">
 					<input type="text" name="id"  value="" placeholder="아이디" /> <br>
