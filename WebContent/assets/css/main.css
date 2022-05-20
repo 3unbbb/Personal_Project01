@@ -24,7 +24,7 @@ section, summary, time, mark, audio, video {
   vertical-align: baseline; }
 
 div#page_control{
-	position: absolute;
+	position: relative;
 	left : 50%;
 	margin-left: auto;
 	margin-right: auto;

@@ -23,11 +23,13 @@
 
 										<li class="opener"> 직무별 게시판</li>
 											<ul>
-												<li><a href="#">1</a></li>
-												<li><a href="#">2</a></li>
-												<li><a href="#">3</a></li>
-												<li><a href="#">4</a></li>
-												<li><a href="#">5</a></li>
+												<li><a href="#">[기획]</a></li>
+												<li><a href="#">[인사]</a></li>
+												<li><a href="#">[재무/회계]</a></li>
+												<li><a href="#">[구매/자재]</a></li>
+												<li><a href="#">[생산]</a></li>
+												<li><a href="#">[IT]</a></li>
+												<li><a href="#">[마케팅]</a></li>
 											</ul>
 										
 										<li><a href="#">Etiam Dolore</a></li>
@@ -38,18 +40,6 @@
 									</ul>
 								</nav>
 								
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamd aliquams aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
 								
 				</div>
 			</div>

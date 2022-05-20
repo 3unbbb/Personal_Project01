@@ -7,8 +7,28 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
 	<head>
 		<title>Elements - Editorial by HTML5 UP</title>
+		
+		
+		<script type= "text/javascript">
+			
+			function checkLogin()
+			{	
+				if(!document.userInfo.id.value){
+					alert('아이디를 입력해주세요');
+					form.id.focus();
+					return false;
+				}else if(!document.userInfo.pass.value){
+					alert("비밀번호를 입력해주세요");
+					form.pass.focus();
+					return false;
+				}
+				return true;	
+			}
+		
+		</script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
@@ -30,15 +50,19 @@
 
 		<!-- Form -->
 
-		<form method="post" action="./LoginAction.mm">
+		<form method="post" action="./LoginAction.mm" name = "userInfo" onsubmit="return checkLogin()">
 			<div class="row gtr-uniform">
 				<div class="col-6 col-12-xsmall">
 					<input type="text" name="id"  value="" placeholder="아이디" /> <br>
 					<input type="text" name="pass" value="" placeholder="비밀번호" /> <br>
 					<input type ="submit" value ="로그인">
+					
 				</div>
 			</div>
 		</form>
+		
+		
+		
 		<ul class="icons">
 			<li><a href="./MemberInsert.mm"><span class= "button">회원가입</span></a></li>
 		</ul>

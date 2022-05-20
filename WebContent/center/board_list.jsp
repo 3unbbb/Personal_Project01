@@ -95,13 +95,9 @@
 	</div>
 		
 	</article>
-		
+	<section class="wirte_search">
     <input type = "button" value="write" onclick=" location.href ='./BoardWrite.bo';">
     
-    	
-					
-	<!-- Search -->
-	<section id="search" class="alt">
 	<form method="post" action="#">
 		<input type="button" value="search" onclick = "">
 		<input type ="text" name = "serach" width ="5">
