@@ -119,9 +119,31 @@ public class BoardFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			
-		}else if(command.equals("./BoardDelte.bo")){
-			System.out.println("/BoardDelte.bo 호출");
+		}else if(command.equals("/BoardDelete.bo")){
+			System.out.println("/BoardDelete.bo 호출");
+			
 			action = new BoardDeleteAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else if(command.equals("/BoardRewrite.bo")){
+			System.out.println("/BoardRewrite.bo 호출");
+			
+			action = new BoardRewriteAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else if(command.equals("BoardReinsertAction.bo")){
+			System.out.println("BoardReinsertAction.bo 호출");
+			
+			action = new BoardReinsertAction();
 			
 			try {
 				forward = action.execute(request, response);

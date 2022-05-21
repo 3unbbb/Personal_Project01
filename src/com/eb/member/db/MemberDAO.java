@@ -100,26 +100,26 @@ public class MemberDAO {
 		//insertMember
 		
 		//getMemberList
-			public List<MemberDTO> getMemberList(){
+			public MemberDTO getMemberInfo(String id){
 				
-				List<MemberDTO> memberList = new ArrayList<MemberDTO>();
+				MemberDTO dto = null;
 				
 				try {
 					//디비연결
 					con = getCon();
 					
 					//sql & pstmt
-					sql = "select * from eb_member";
+					sql = "select * from eb_member where id=?";
 					pstmt = con.prepareStatement(sql);
+					
+					pstmt.setString(1, id);
 					
 					//sql 실행
 					rs = pstmt.executeQuery();
 					
-					System.out.println("쿼리 실행완료");
-					
 					//5. 데이터 받아오기(db -> dto)
 					while(rs.next()){
-						MemberDTO dto = new MemberDTO();
+						dto = new MemberDTO();
 						
 						dto.setCompany(rs.getString("company"));
 						dto.setAge(rs.getInt("age"));
@@ -130,11 +130,10 @@ public class MemberDAO {
 						dto.setPass(rs.getString("pass"));
 						dto.setTel(rs.getString("tel"));
 						
-						//dto에 저장한 정보 > Array에 담기 (arrayList 생성)
-						memberList.add(dto);
+						
 					}
 					
-					System.out.println("DAO :(관리자)회원 목록 조회 성공");
+					System.out.println("DAO :회원 정보 조회 완료");
 					
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -143,7 +142,7 @@ public class MemberDAO {
 					closeDB();
 				}
 				
-				return memberList;
+				return dto;
 			}
 		
 		//getMemberList
@@ -238,10 +237,36 @@ public class MemberDAO {
 	
 	//getBoardMember()	
 			
+	//updateMember(company, department, email)		
+		public void updateMember(String id, String company, String department, String email){
+			
+			try {
+				con = getCon();
+				
+				sql="update eb_member set "
+						+ "company =?, department=?, email=? "
+						+ "where id=?";
+						
+				pstmt=con.prepareStatement(sql);
+				
+				pstmt.setString(1, company);
+				pstmt.setString(2, department);
+				pstmt.setString(3, email);
+				pstmt.setString(4, id);
+				
+				pstmt.executeUpdate();
+				
+				System.out.println("DAO : 회원정보 수정 완료 (id : "+id+")");
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			
+		}
 			
-			
+	//updateMember(company, department, email)		
 			
 			
 			

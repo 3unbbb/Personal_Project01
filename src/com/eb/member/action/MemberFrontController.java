@@ -68,22 +68,6 @@ public class MemberFrontController extends HttpServlet{
 		
 		}
 		
-		else if(command.equals("/MemberList.mm")){
-			System.out.println("C : /MemberList.mm 호출");
-			//DB사용, VIEW 출력
-			
-			//MemberListAction 객체 생성
-			action = new MemberListAction();
-			
-			try {
-			forward = action.execute(request, response);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
-		
 		else if(command.equals("/LoginAction.mm")){
 			System.out.println("C : /LoginAction.mm 호출" );
 			//db사용 o
@@ -119,6 +103,29 @@ public class MemberFrontController extends HttpServlet{
 			forward.setPath("./member/login.jsp");
 			forward.setRedirect(false);
 		
+		}else if(command.equals("/MemberInfo.mm")){
+			System.out.println("/MemberInfo.mm 호출");
+			
+			action = new MemberInfoAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}else if(command.equals("/MemberInfoUpdate.mm")){
+			System.out.println("/MemberInfoUpdate.mm 호출");
+			
+			action = new MemberInfoUpdateAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		

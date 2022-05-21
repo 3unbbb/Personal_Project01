@@ -12,9 +12,9 @@
   
  // response.sendRedirect("./MemberInsert.mm");
  //response.sendRedirect("./MemberList.mm");
- response.sendRedirect("./Login.mm");
+ //response.sendRedirect("./Login.mm");
  //response.sendRedirect("./BoardWrite.bo");
-//response.sendRedirect("./BoardList.bo");
+response.sendRedirect("./BoardList.bo");
 
 
 %>   

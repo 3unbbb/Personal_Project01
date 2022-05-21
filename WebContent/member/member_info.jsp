@@ -32,49 +32,62 @@
 	<!-- Header -->
 	
 	<%
-		List<MemberDTO> memberList = (List<MemberDTO>) request.getAttribute("memberList");
+		MemberDTO dto = (MemberDTO)request.getAttribute("dto");
 	
 	%>
 	
-
-
 	<!-- 게시판 -->
 	<article>
 		<h1>회원 리스트</h1>
+		
+	<form action="./MemberInfoUpdate.mm" method="post" >
 		<table id="notice">
+			<tr><th colspan ="2">회원 정보</th></tr>
 			<tr>
 
-				<th class="id">id</th>
- 			 	<th class="pass">pass</th>
-   				<th class="name">name</th>
-   				<th class="age">age</th>
-				<th class="tel">tel</th>
-				<th class="email">email</th>
-				<th class="company">company</th>
-				<th class="department">department</th>
+				<td>id</td> 
+				<td>${dto.getId() }</td>
+			</tr>
+			<tr>	
+   				<td>name</td>
+   				<td>${dto.getName() }</td>
+			</tr>
+			<tr>
+   				<td>age</td>
+   				<td>${dto.getAge() }</td>
+   			</tr>
+			<tr>
+				<td>tel</td>
+				<td>${dto.getTel() }</td>
+			</tr>
+			<tr>
+				<td>email</td>
+				<td><input type="text" name="email" value = "${dto.getEmail() }"></td>
+			</tr>
+			<tr>	
+				<td>company</td>
+				<td><input type="text" name="company" value = "${dto.getCompany() }"></td>
+			</tr>
+			<tr>	
+				<td >department</td>
+				<td><select name ="department">
+							<option>---부서를 선택하세요---</option>
+							<option value ="strategy">기획</option>
+							<option value ="hr">인사</option>
+							<option value ="account">재무/회계</option>
+							<option value ="purchase">구매/자재</option>
+							<option value ="production">생산</option>
+							<option value ="IT">IT</option>
+							<option value ="marketing">마케팅</option>
+							</select>
+							</td>
 			</tr>
 
-	<% for(int i=0;i<memberList.size();i++){
-		
-		MemberDTO dto = memberList.get(i);
-		
-	%>
-		<tr>
-			<td><%=dto.getId() %></td>
-			<td><%=dto.getPass() %></td>
-			<td><%=dto.getName() %></td>
-			<td><%=dto.getAge() %></td>
-			<td><%=dto.getTel() %></td>
-			<td><%=dto.getEmail() %></td>
-			<td><%=dto.getCompany() %></td>
-			<td><%=dto.getDepartment() %></td>
-				
-   			</tr>
-    
-	<% }%>
-    
 		</table>
-
+		
+		<input type = "submit" value = "수정하기" class="btn">
+		
+	</form>
 	</article>
 
 	</div> 

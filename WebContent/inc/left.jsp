@@ -32,9 +32,9 @@
 												<li><a href="#">[마케팅]</a></li>
 											</ul>
 										
+										<li><a href="./MemberInfo.mm">마이페이지</a></li>
 										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
-										
+
 										<li><a href="#">Maximus Erat</a></li>
 
 									</ul>

@@ -72,14 +72,14 @@
 		
 		
     <input type = "button" value="목록" onclick="location.href='./BoardList.bo?pageNum=<%=pageNum %>';">
-    <input type = "button" value="답글" onclick="location.href='./BoardRewrite.bo?&pageNum=<%=pageNum %>';">
+    <input type = "button" value="답글" onclick="location.href='./BoardRewrite.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
     
     <input type = "hidden" value = <%=dto.getB_Id() %>>
     <input type = "hidden" value = <%=session.getAttribute("id") %>>
     <%
     if(session.getAttribute("id").equals(dto.getB_Id())){ %>
     <input type = "button" value="수정" onclick="location.href='./BoardModify.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
-    <input type = "button" value="삭제" onclick="location.href='./BoardDelte.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
+    <input type = "button" value="삭제" onclick="location.href='./BoardDelete.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
     
    <% } %>
     

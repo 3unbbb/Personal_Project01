@@ -432,5 +432,71 @@ public class BoardDAO {
 	}	
 	//updateBoard(num, dto)
 	
+	//deleteBoard(num)
+	public void deleteBoard(int num){
+		
+		try {
+			con = getCon();
+			
+			sql="delete from eb_board where num=?";
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, num);
+			
+			pstmt.executeUpdate();
+			
+			System.out.println("DAO : "+num+"번 글 삭제 완료");
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeDB();
+		}
+		
+		
+	}
+	
+	//deleteBoard(num)
+	
+	//boardReinsert(num)
+		public BoardDTO boardReinsert(int num){
+			BoardDTO dto = new BoardDTO();
+			
+			try {
+				con = getCon();
+				
+				sql = "insert into eb_board(num,b_id,b_company,b_department,subject,content,"
+						+"read_count,re_ref,re_lev,re_seq,date,ip,file) "
+						+"values(?,?,?,?,?,?,?,?,?,?,now(),?,?)";
+				
+				pstmt = con.prepareStatement(sql);
+				
+				pstmt.setInt(1, num);
+				
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()){
+					
+				}
+				
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeDB();
+			}
+			
+			
+			
+			
+			return dto;
+		}
+	
+	
+	
+	//boardReinsert(num)
+	
 	
 }
