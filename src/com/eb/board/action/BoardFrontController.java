@@ -120,7 +120,7 @@ public class BoardFrontController extends HttpServlet{
 			}
 			
 		}else if(command.equals("/BoardDelete.bo")){
-			System.out.println("/BoardDelete.bo 호출");
+			System.out.println("C : /BoardDelete.bo 호출");
 			
 			action = new BoardDeleteAction();
 			
@@ -131,7 +131,7 @@ public class BoardFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 		}else if(command.equals("/BoardRewrite.bo")){
-			System.out.println("/BoardRewrite.bo 호출");
+			System.out.println("C : /BoardRewrite.bo 호출");
 			
 			action = new BoardRewriteAction();
 			try {
@@ -141,7 +141,7 @@ public class BoardFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 		}else if(command.equals("/BoardReinsertAction.bo")){
-			System.out.println("BoardReinsertAction.bo 호출");
+			System.out.println("C :BoardReinsertAction.bo 호출");
 			
 			action = new BoardReinsertAction();
 			

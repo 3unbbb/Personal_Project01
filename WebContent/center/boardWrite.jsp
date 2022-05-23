@@ -37,7 +37,7 @@
 				<h1>글쓰기 페이지</h1>
 			</header>
 			
-	<form action ="./BoardWriteAction.bo?b_id=${dto.getB_Id() }&b_company=${dto.getB_Company() }&b_department=${dto.getB_Department() }" method = "post">
+	<form action ="./BoardWriteAction.bo?b_id=${dto.getB_Id() }&b_company=${dto.getB_Company() }&b_department=${dto.getB_Department() }" method = "post" enctype="multipart/form-data">
 	
 	<table>
 			<tr>
@@ -58,7 +58,7 @@
 			</tr>
 			<tr>
 			<td> 파일</td>
-			<td colspan = "3"><input type ="file"></td>
+			<td colspan = "3"><input type ="file" name="file"></td>
 			</tr>
 			
 			

@@ -5,44 +5,31 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.eb.board.db.BoardDAO;
 import com.eb.board.db.BoardDTO;
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class BoardWriteAction implements Action{
+public class Board_hi_WriteAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		
-		
-		
 		System.out.println("M : BoardWriteAction-execute()호출");
 		
-		//파일 폴더
-		String path = request.getRealPath("/upload");
-		System.out.println("M : "+ path);
-				
-		int maxSize = 5*1024*1024;
-		MultipartRequest multi = new MultipartRequest(
-			request, path, maxSize, "UTF-8", new DefaultFileRenamePolicy());
-						
-			
+		
 		
 		//전달된 정보를 저장(Board DTO)
 		BoardDTO dto = new BoardDTO();
-		dto.setB_Company(multi.getParameter("b_company"));
-		dto.setContent(multi.getParameter("content"));
-		dto.setB_Department(multi.getParameter("b_department"));
-		dto.setB_Id(multi.getParameter("b_id"));
-		dto.setSubject(multi.getParameter("subject"));
-		dto.setFile(multi.getFilesystemName("file"));
+		dto.setB_Company(request.getParameter("b_company"));
+		dto.setContent(request.getParameter("content"));
+		dto.setB_Department(request.getParameter("b_department"));
+		dto.setB_Id(request.getParameter("b_id"));
+		dto.setSubject(request.getParameter("subject"));
 		
-		System.out.println(multi.getParameter("b_id"));
-		System.out.println(multi.getParameter("subject"));
+		System.out.println(request.getParameter("b_id"));
+		System.out.println(request.getParameter("subject"));
 		
 		dto.setIp(request.getRemoteAddr());
-		//System.out.println("M : "+ dto);
+		System.out.println("M : "+ dto);
 		
 		//Board DAO 객체 생성
 		BoardDAO dao = new BoardDAO();

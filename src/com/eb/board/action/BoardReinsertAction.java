@@ -13,7 +13,7 @@ public class BoardReinsertAction implements Action {
 			HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		
-		System.out.println("M : BoardReinsertAction.bo");
+		System.out.println("M : BoardReinsertAction-execute()호출");
 		
 		//전달받은정보  num, re_ref, lev, seq, name, pass subject, content
 		//dto에 저장

@@ -65,6 +65,15 @@
 			<tr>
 				<td colspan = "8">${dto.file }</td>
 			</tr>
+			
+			<tr>
+				<td>첨부파일</td>
+				<td colspan="4">
+					<a href="./upload/${dto.file }">${dto.file }</a>
+					<hr>
+	    			<a href = "./center/fileDown.jsp?fileName=${dto.file }">${dto.file }</a>
+					</td>
+			</tr>
 
 	</table>
 		

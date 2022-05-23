@@ -6,6 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import com.eb.board.db.BoardDAO;
 import com.eb.board.db.BoardDTO;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class BoardContentAction implements Action {
 
@@ -18,7 +20,7 @@ public class BoardContentAction implements Action {
 		int num = Integer.parseInt(request.getParameter("num"));
 		String pageNum = request.getParameter("pageNum");
 		
-		
+			
 		//db사용 o, 
 		BoardDAO dao = new BoardDAO();
 		dao.updateReadCount(num);

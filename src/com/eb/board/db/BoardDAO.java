@@ -333,6 +333,8 @@ public class BoardDAO {
 				dto.setB_Department(rs.getString("b_department"));
 				dto.setB_Id(rs.getString("b_id"));
 				
+
+				
 			}
 			System.out.println(" DAO : 게시판 글 1개 저장완료 ");	
 		
@@ -478,7 +480,8 @@ public class BoardDAO {
 				}
 				System.out.println("DAO : 답글의 번호 " + num);
 				
-				sql = "update eb_board set re_seq = re_seq + 1 where re_ref=? and re_seq>?";
+				sql = "update eb_board set re_seq = re_seq + 1 "
+						+ "where re_ref=? and re_seq>?";
 				pstmt = con.prepareStatement(sql);
 				
 				pstmt.setInt(1, dto.getRe_ref());
