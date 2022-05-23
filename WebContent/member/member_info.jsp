@@ -62,15 +62,15 @@
 			</tr>
 			<tr>
 				<td>email</td>
-				<td><input type="text" name="email" value = "${dto.getEmail() }"></td>
+				<td><input type="text" name="u_email" value = "${dto.getEmail() }"></td>
 			</tr>
 			<tr>	
 				<td>company</td>
-				<td><input type="text" name="company" value = "${dto.getCompany() }"></td>
+				<td><input type="text" name="u_company" value = "${dto.getCompany() }"></td>
 			</tr>
 			<tr>	
 				<td >department</td>
-				<td><select name ="department">
+				<td><select name ="u_department">
 							<option>---부서를 선택하세요---</option>
 							<option value ="strategy">기획</option>
 							<option value ="hr">인사</option>

@@ -16,9 +16,12 @@ public class MemberInfoUpdateAction implements Action {
 		String id = (String)session.getAttribute("id");
 		
 		//전달받은 정보 o
-		String company = (String)request.getAttribute("company");
-		String department = (String)request.getAttribute("department");
-		String email = (String)request.getAttribute("email");
+		String company = (String)request.getParameter("u_company");
+		String department = (String)request.getParameter("u_department");
+		String email = (String)request.getParameter("u_email");
+		System.out.println("company :" + company );
+		System.out.println("department :" + department );
+		System.out.println("email :" + email );
 		
 		
 		//db에 저장
@@ -26,8 +29,12 @@ public class MemberInfoUpdateAction implements Action {
 		
 		dao.updateMember(id, company, department, email);
 		
+		//페이지 이동
+		ActionForward forward = new ActionForward();
+		forward.setPath("./BoardList.bo");
+		forward.setRedirect(true);
 		
-		return null;
+		return forward;
 	}
 
 }
