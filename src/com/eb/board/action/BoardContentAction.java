@@ -6,8 +6,6 @@ import javax.servlet.http.HttpSession;
 
 import com.eb.board.db.BoardDAO;
 import com.eb.board.db.BoardDTO;
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class BoardContentAction implements Action {
 
@@ -15,7 +13,8 @@ public class BoardContentAction implements Action {
 	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
-		
+	
+			
 		//받아올정보(num, pageNum)
 		int num = Integer.parseInt(request.getParameter("num"));
 		String pageNum = request.getParameter("pageNum");
@@ -31,7 +30,7 @@ public class BoardContentAction implements Action {
 		request.setAttribute("dto", dto);
 		request.setAttribute("pageNum", pageNum);
 		
-		ActionForward forward= new ActionForward();
+		ActionForward forward = new ActionForward();
 		forward.setPath("./center/board_content.jsp");
 		forward.setRedirect(false);
 		

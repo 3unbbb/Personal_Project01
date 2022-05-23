@@ -16,6 +16,34 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
+		
+		
+		<script type="text/javascript">
+			
+
+		
+			function checkLogin(){	
+				
+				
+				if(document.infoForm.u_email.value == ""){
+					alert('이메일을 입력해주세요');
+					document.infoForm.u_email.focus();
+					return false;
+					
+				} if(document.infoForm.u_company.value ==""){
+					alert("회사를 입력해주세요");
+					document.infoForm.u_company.focus();
+					return false;
+					
+				} if(document.infoForm.u_department.value ==""){
+					alert("부서를 입력해주세요");
+					document.infoForm.u_department.focus();
+					return false;
+				}
+	
+			}
+		</script>
+		
 	</head>
 	<body class="is-preload">
 
@@ -35,12 +63,21 @@
 		MemberDTO dto = (MemberDTO)request.getAttribute("dto");
 	
 	%>
+	<%	String sessionId = (String)session.getAttribute("id");
+	
+		if(sessionId == null){
+			 %><script>
+			 alert('로그인 후 사용가능합니다.');
+			 location.href='./Login.mm';</script><%
+		}
+	
+	%>
 	
 	<!-- 게시판 -->
 	<article>
 		<h1>회원 리스트</h1>
 		
-	<form action="./MemberInfoUpdate.mm" method="post" >
+	<form action="./MemberInfoUpdate.mm" method="post" name="infoForm" onsubmit="return checkLogin();">
 		<table id="notice">
 			<tr><th colspan ="2">회원 정보</th></tr>
 			<tr>

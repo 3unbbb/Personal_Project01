@@ -28,6 +28,16 @@
 	<!-- Header -->
 <% //  BoardDTO dto = (BoardDTO)request.getAttribute("dto"); %>
 
+<%	String sessionId = (String)session.getAttribute("id");
+	
+		if(sessionId == null){
+			 %><script>
+			 alert('로그인 후 사용가능합니다.');
+			 location.href='./Login.mm';</script><%
+		}
+	
+	%>
+
 	<!-- Content -->
 		<section>
 			<header class="main">
