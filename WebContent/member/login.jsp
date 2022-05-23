@@ -18,12 +18,12 @@
 				
 				if(document.userInfo.id.value == ""){
 					alert('아이디를 입력해주세요');
-					form.id.focus();
+					document.userInfo.id.focus();
 					return false;
 					
 				} if(document.userInfo.pass.value ==""){
 					alert("비밀번호를 입력해주세요");
-					form.pass.focus();
+					document.userInfo.pass.focus();
 					return false;
 				}
 	
@@ -54,8 +54,8 @@
 		<form method="post" action="./LoginAction.mm" name = "userInfo" onsubmit="return checkLogin();">
 			<div class="row gtr-uniform">
 				<div class="col-6 col-12-xsmall">
-					<input type="text" name="id"  value="" placeholder="아이디" /> <br>
-					<input type="text" name="pass" value="" placeholder="비밀번호" /> <br>
+					<input type="text" name="id"   placeholder="아이디" /> <br>
+					<input type="text" name="pass" placeholder="비밀번호" /> <br>
 					<input type ="submit" value ="로그인">
 					
 				</div>

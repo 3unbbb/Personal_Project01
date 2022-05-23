@@ -140,7 +140,7 @@ public class BoardFrontController extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else if(command.equals("BoardReinsertAction.bo")){
+		}else if(command.equals("/BoardReinsertAction.bo")){
 			System.out.println("BoardReinsertAction.bo 호출");
 			
 			action = new BoardReinsertAction();

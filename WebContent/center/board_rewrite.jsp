@@ -38,7 +38,10 @@
 			</header>
 			
 	<form action ="./BoardReinsertAction.bo?b_id=${dto.getB_Id() }&b_company=${dto.getB_Company() }&b_department=${dto.getB_Department() }" method = "post">
-	
+		<input type="text" name="num" value ="${param.num }">
+		<input type="text" name="re_ref" value ="${param.re_ref }">
+		<input type="text" name="re_lev" value ="${param.re_lev }">
+		<input type="text" name="re_seq" value ="${param.re_seq }">
 	<table>
 			<tr>
 				<td> 글쓴이</td>

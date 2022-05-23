@@ -460,26 +460,59 @@ public class BoardDAO {
 	//deleteBoard(num)
 	
 	//boardReinsert(num)
-		public BoardDTO boardReinsert(int num){
-			BoardDTO dto = new BoardDTO();
+		public void boardReinsert(BoardDTO dto){
+			
+			int num=0;
 			
 			try {
 				con = getCon();
 				
-				sql = "insert into eb_board(num,b_id,b_company,b_department,subject,content,"
-						+"read_count,re_ref,re_lev,re_seq,date,ip,file) "
-						+"values(?,?,?,?,?,?,?,?,?,?,now(),?,?)";
-				
+				sql="select max(num) from eb_board";
 				pstmt = con.prepareStatement(sql);
-				
-				pstmt.setInt(1, num);
 				
 				rs = pstmt.executeQuery();
 				
 				if(rs.next()){
+					num = rs.getInt(1)+1;
+				
+				}
+				System.out.println("DAO : 답글의 번호 " + num);
+				
+				sql = "update eb_board set re_seq = re_seq + 1 where re_ref=? and re_seq>?";
+				pstmt = con.prepareStatement(sql);
+				
+				pstmt.setInt(1, dto.getRe_ref());
+				pstmt.setInt(2, dto.getRe_seq());
+				
+				int check = pstmt.executeUpdate();
+				
+				System.out.println(check);
+				
+				if(check >0){
+					System.out.println("DAO : 답글 순서 재배치 완");
+					
+					sql = "insert into eb_board(num,b_id,b_company,b_department,subject,content,"
+							+"read_count,re_ref,re_lev,re_seq,date,ip,file) "
+							+"values(?,?,?,?,?,?,?,?,?,?,now(),?,?)";
+					
+					pstmt = con.prepareStatement(sql);
+					
+					pstmt.setInt(1, num);
+					pstmt.setString(2, dto.getB_Id());
+					pstmt.setString(3, dto.getB_Company());
+					pstmt.setString(3, dto.getB_Department());
+					pstmt.setString(5, dto.getSubject());
+					pstmt.setString(6, dto.getContent());
+					pstmt.setInt(7, 0);
+					pstmt.setInt(8, dto.getRe_ref());
+					pstmt.setInt(9, dto.getRe_lev()+1);
+					pstmt.setInt(10, dto.getRe_seq()+1);
+					pstmt.setString(11, dto.getIp());
+					pstmt.setString(12, dto.getFile());
+					
+					pstmt.executeQuery();
 					
 				}
-				
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -488,10 +521,6 @@ public class BoardDAO {
 				closeDB();
 			}
 			
-			
-			
-			
-			return dto;
 		}
 	
 	

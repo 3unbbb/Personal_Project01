@@ -72,7 +72,7 @@
 		
 		
     <input type = "button" value="목록" onclick="location.href='./BoardList.bo?pageNum=<%=pageNum %>';">
-    <input type = "button" value="답글" onclick="location.href='./BoardRewrite.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
+    <input type = "button" value="답글" onclick="location.href='./BoardRewrite.bo?num=${dto.num }&re_ref=<%=dto.getRe_ref() %>&re_lev=<%=dto.getRe_lev() %>&re_seq=<%=dto.getRe_seq() %>';">
     
     <input type = "hidden" value = <%=dto.getB_Id() %>>
     <input type = "hidden" value = <%=session.getAttribute("id") %>>
