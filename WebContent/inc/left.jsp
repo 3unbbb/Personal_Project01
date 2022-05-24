@@ -18,7 +18,7 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="./main/main.jsp">Home</a></li>
+										<li><a href="./Main.ma">Home</a></li>
 										<li><a href="./BoardList.bo">전체게시판</a></li>
 
 										<li class="opener"> 직무별 게시판</li>
