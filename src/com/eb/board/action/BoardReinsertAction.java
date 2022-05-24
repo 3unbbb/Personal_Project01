@@ -8,6 +8,8 @@ import javax.servlet.http.HttpSession;
 
 import com.eb.board.db.BoardDAO;
 import com.eb.board.db.BoardDTO;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class BoardReinsertAction implements Action {
 
@@ -38,17 +40,27 @@ public class BoardReinsertAction implements Action {
 		
 		//전달받은정보  num, re_ref, lev, seq, name, pass subject, content
 		//dto에 저장
+		
+		String path = request.getRealPath("/reupload");
+		System.out.println("M : "+ path);
+				
+		int maxSize = 5*1024*1024;
+		MultipartRequest multi = new MultipartRequest(
+			request, path, maxSize, "UTF-8", new DefaultFileRenamePolicy());
+		
 		BoardDTO dto = new BoardDTO();
-		dto.setNum(Integer.parseInt(request.getParameter("num")));
-		dto.setB_Company(request.getParameter("b_company"));
-		dto.setB_Department(request.getParameter("b_department"));
-		dto.setB_Id(request.getParameter("id"));
-		dto.setContent(request.getParameter("content"));
-		dto.setFile(request.getParameter("file"));
-		dto.setSubject(request.getParameter("subject"));
-		dto.setRe_ref(Integer.parseInt(request.getParameter("re_ref")));
-		dto.setRe_lev(Integer.parseInt(request.getParameter("re_lev")));
-		dto.setRe_seq(Integer.parseInt(request.getParameter("re_seq")));
+		dto.setNum(Integer.parseInt(multi.getParameter("num")));
+		dto.setB_Company(multi.getParameter("b_company"));
+		dto.setB_Department(multi.getParameter("b_department"));
+		dto.setB_Id(multi.getParameter("id"));
+		dto.setContent(multi.getParameter("content"));
+		dto.setFile(multi.getFilesystemName("file"));
+		dto.setSubject(multi.getParameter("subject"));
+		dto.setRe_ref(Integer.parseInt(multi.getParameter("re_ref")));
+		dto.setRe_lev(Integer.parseInt(multi.getParameter("re_lev")));
+		dto.setRe_seq(Integer.parseInt(multi.getParameter("re_seq")));
+		
+		dto.setIp(request.getRemoteAddr());
 		
 		//db사용 o
 		BoardDAO dao = new BoardDAO();

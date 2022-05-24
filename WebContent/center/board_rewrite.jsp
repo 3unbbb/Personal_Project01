@@ -47,11 +47,11 @@
 				<h1>글쓰기 페이지</h1>
 			</header>
 			
-	<form action ="./BoardReinsertAction.bo?b_id=${dto.getB_Id() }&b_company=${dto.getB_Company() }&b_department=${dto.getB_Department() }" method = "post">
-		<input type="text" name="num" value ="${param.num }">
-		<input type="text" name="re_ref" value ="${param.re_ref }">
-		<input type="text" name="re_lev" value ="${param.re_lev }">
-		<input type="text" name="re_seq" value ="${param.re_seq }">
+	<form action ="./BoardReinsertAction.bo?b_id=${dto.getB_Id() }&b_company=${dto.getB_Company() }&b_department=${dto.getB_Department() }" method = "post" enctype="multipart/form-data">
+		<input type="hidden" name="num" value ="${param.num }">
+		<input type="hidden" name="re_ref" value ="${param.re_ref }">
+		<input type="hidden" name="re_lev" value ="${param.re_lev }">
+		<input type="hidden" name="re_seq" value ="${param.re_seq }">
 	<table>
 			<tr>
 				<td> 글쓴이</td>
@@ -71,7 +71,7 @@
 			</tr>
 			<tr>
 			<td> 파일</td>
-			<td colspan = "3"><input type ="file"></td>
+			<td colspan = "3"><input type ="file" name = "file"></td>
 			</tr>
 			
 			
