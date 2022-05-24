@@ -1,5 +1,7 @@
 package com.eb.board.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,7 +21,22 @@ public class BoardMemberAction implements Action {
 			//전달받은 정보 = session의 아이디
 			
 			HttpSession session = request.getSession();
-			String id = (String) session.getAttribute("id");
+			String id = (String)session.getAttribute("id");
+			
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			
+			ActionForward forward = new ActionForward();
+			if(id == null){
+			out.println("<script language='javascript'>");
+			out.println("alert('로그인이 필요한 서비스입니다.')");
+			out.println("location.href='./Login.mm';");
+			out.println("</script>");
+
+			out.flush();
+			
+
+			}
 						
 			MemberDAO dao = new MemberDAO();
 			
@@ -34,7 +51,6 @@ public class BoardMemberAction implements Action {
 			request.setAttribute("dto", dto);
 			
 
-			ActionForward forward = new ActionForward();
 			forward.setPath("./center/boardWrite.jsp");
 			forward.setRedirect(false);
 							
