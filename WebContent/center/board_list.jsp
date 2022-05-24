@@ -57,9 +57,18 @@
    		 <c:forEach var = "dto" items="${boardList }">
 			<tr>
 				<td>${dto.num }</td>
-				<td>썸네일</td>
-				<td class="left" ><a href="./BoardContent.bo?num=${dto.num }&pageNum=<%=pageNum%>">
-				${dto.subject }</a></td>
+				<td class="left" >
+				
+					<c:if test="${dto.re_lev > 0 }">
+		        		<img src="./images/level.gif" width="${dto.re_lev * 10 }">
+		        		<img src="./images/re.png" width = "15">
+		     	  </c:if> 
+		     	  <img  src="./images/thumbnail.jpg" width ="40">
+				<a href="./BoardContent.bo?num=${dto.num }&pageNum=<%=pageNum%>">
+				${dto.subject }
+				</a>
+				</td>
+				
    				<td>${dto.b_Id }</td>
    				<td>${dto.date }</td>
    				<td>${dto.read_count }</td>

@@ -494,22 +494,25 @@ public class BoardDAO {
 				if(check >0)
 					System.out.println("DAO : 답글 순서 재배치 완");
 					
-					sql = "insert into eb_board(num,b_id,b_company,subject,content,"
+					sql = "insert into eb_board(num,b_id,b_company,b_department,subject,content,"
 							+"read_count,re_ref,re_lev,re_seq,date,ip,file) "
-							+"values(?,?,?,?,?,?,?,?,?,?,now(),?,?)";
+							+"values(?,?,?,?,?,"
+							+ "?,?,?,?,?,"
+							+ "now(),?,?)";
 					
 					pstmt = con.prepareStatement(sql);
 					
 					pstmt.setInt(1, num);
 					pstmt.setString(2, dto.getB_Id());
 					pstmt.setString(3, dto.getB_Company());
-					pstmt.setString(4, dto.getSubject());
-					pstmt.setString(5, dto.getContent());
-					pstmt.setInt(6, 0);
-					pstmt.setInt(7, dto.getRe_ref());
-					pstmt.setInt(8, dto.getRe_lev()+1);
-					pstmt.setInt(9, dto.getRe_seq()+1);
-					pstmt.setString(10, dto.getIp());
+					pstmt.setString(4, dto.getB_Department());
+					pstmt.setString(5, dto.getSubject());
+					pstmt.setString(6, dto.getContent());
+					pstmt.setInt(7, 0);
+					pstmt.setInt(8, dto.getRe_ref());
+					pstmt.setInt(9, dto.getRe_lev()+1);
+					pstmt.setInt(10, dto.getRe_seq()+1);
+					pstmt.setString(11, dto.getIp());
 					pstmt.setString(12, dto.getFile());
 					
 					pstmt.executeUpdate();

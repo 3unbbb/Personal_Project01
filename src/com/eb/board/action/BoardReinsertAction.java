@@ -52,7 +52,7 @@ public class BoardReinsertAction implements Action {
 		dto.setNum(Integer.parseInt(multi.getParameter("num")));
 		dto.setB_Company(multi.getParameter("b_company"));
 		dto.setB_Department(multi.getParameter("b_department"));
-		dto.setB_Id(multi.getParameter("id"));
+		dto.setB_Id(id);
 		dto.setContent(multi.getParameter("content"));
 		dto.setFile(multi.getFilesystemName("file"));
 		dto.setSubject(multi.getParameter("subject"));
