@@ -30,6 +30,9 @@ public class MemberInsertAction implements Action {
 		dto.setName(request.getParameter("name"));
 		dto.setPass(request.getParameter("pass"));
 		dto.setTel(request.getParameter("tel"));
+		dto.setAddress(request.getParameter("address"));
+		dto.setDetailAddress(request.getParameter("detailAddress"));
+		dto.setPostcode(request.getParameter("postcode"));
 
 		System.out.println("저장할 회원 정보 : " + dto);
 		

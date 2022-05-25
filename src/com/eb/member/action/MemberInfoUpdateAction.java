@@ -19,6 +19,9 @@ public class MemberInfoUpdateAction implements Action {
 		String company = (String)request.getParameter("u_company");
 		String department = (String)request.getParameter("u_department");
 		String email = (String)request.getParameter("u_email");
+		String postcode = (String)request.getParameter("postcode");
+		String address = (String)request.getParameter("address");
+		String detailAddress = (String)request.getParameter("detailAddress");
 		System.out.println("company :" + company );
 		System.out.println("department :" + department );
 		System.out.println("email :" + email );
@@ -27,11 +30,11 @@ public class MemberInfoUpdateAction implements Action {
 		//db에 저장
 		MemberDAO dao = new MemberDAO();
 		
-		dao.updateMember(id, company, department, email);
+		dao.updateMember(id, company, department, email,postcode, address, detailAddress);
 		
 		//페이지 이동
 		ActionForward forward = new ActionForward();
-		forward.setPath("./BoardList.bo");
+		forward.setPath("./Main.ma");
 		forward.setRedirect(true);
 		
 		return forward;

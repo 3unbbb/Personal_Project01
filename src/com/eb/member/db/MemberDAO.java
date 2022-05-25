@@ -67,8 +67,8 @@ public class MemberDAO {
 				
 				//sql 작성& pstmp
 				sql = "insert into eb_member (id, pass, name, age, tel, "
-						+ "email, company, department) "
-						+ "values(?,?,?,?,?,?,?,?)";
+						+ "email, company, department, postcode, address, detailAddress) "
+						+ "values(?,?,?,?,?,?,?,?,?,?,?)";
 				pstmt = con.prepareStatement(sql);
 				
 				
@@ -81,6 +81,9 @@ public class MemberDAO {
 				pstmt.setString(6, dto.getEmail());
 				pstmt.setString(7, dto.getCompany());
 				pstmt.setString(8, dto.getDepartment());
+				pstmt.setString(9, dto.getPostcode());
+				pstmt.setString(10, dto.getAddress());
+				pstmt.setString(11, dto.getDetailAddress());
 				
 				//sql 실행
 				pstmt.executeUpdate();
@@ -129,6 +132,9 @@ public class MemberDAO {
 						dto.setName(rs.getNString("name"));
 						dto.setPass(rs.getString("pass"));
 						dto.setTel(rs.getString("tel"));
+						dto.setAddress(rs.getString("address"));
+						dto.setDetailAddress(rs.getString("detailAddress"));
+						dto.setPostcode(rs.getString("postcode"));
 						
 						
 					}
@@ -238,13 +244,14 @@ public class MemberDAO {
 	//getBoardMember()	
 			
 	//updateMember(company, department, email)		
-		public void updateMember(String id, String company, String department, String email){
+		public void updateMember(String id, String company,
+				String department, String email, String postcode,String address,String detailAddress){
 			
 			try {
 				con = getCon();
 				
 				sql="update eb_member set "
-						+ "company =?, department=?, email=? "
+						+ "company =?, department=?, email=?,postcode=?, address=?, detailAddress=?"
 						+ "where id=?";
 						
 				pstmt=con.prepareStatement(sql);
@@ -252,7 +259,10 @@ public class MemberDAO {
 				pstmt.setString(1, company);
 				pstmt.setString(2, department);
 				pstmt.setString(3, email);
-				pstmt.setString(4, id);
+				pstmt.setString(4, postcode);
+				pstmt.setString(5, address);
+				pstmt.setString(6, detailAddress);
+				pstmt.setString(7, id);
 				
 				pstmt.executeUpdate();
 				

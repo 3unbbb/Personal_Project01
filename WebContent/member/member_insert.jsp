@@ -43,10 +43,16 @@
 					alert("회사를 입력해주세요");
 					form.company.focus();
 					return false;
+				}if(document.userInsert.postcode.value ==""){
+					alert("회사를 입력해주세요");
+					form.company.focus();
+					return false;
 				}
 	
 			}
 		</script>
+		
+
 		
 		
 		<meta charset="utf-8" />
@@ -80,6 +86,37 @@
 						나이 <input type="text" name="age" ><br>
 						전화번호 <input type="tel" name="tel"><br>
 						이메일 <input type="email" name="email"><br>
+						주소
+							<input type="text" id="postcode" name = "postcode" placeholder="우편번호" >
+							<input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
+							<input type="text" id="address" name = "address" placeholder="주소"><br>
+							<input type="text" id="detailAddress" name = "detailAddress" placeholder="상세주소">
+							
+								<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+								<script>
+  									  function execDaumPostcode() {
+   									     new daum.Postcode({
+        								    oncomplete: function(data) {
+               
+              								var addr = ''; // 주소 변수
+                							var extraAddr = ''; // 참고항목 변수
+
+               								if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                   								 addr = data.roadAddress;
+              								  } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                  								  addr = data.jibunAddress;
+            								    }
+
+							                document.getElementById('postcode').value = data.zonecode;
+           								    document.getElementById("address").value = addr;
+	
+											document.getElementById("detailAddress").focus();
+            							}
+   							  		  }).open();
+   								 	}
+								</script>
+
+							 
 						회사 <input type="text" name="company"><br>
 						부서
 							<select name ="department">
