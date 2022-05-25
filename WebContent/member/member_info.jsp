@@ -125,6 +125,9 @@
 		<input type = "submit" value = "수정하기" class="btn">
 		
 	</form>
+	<form action="./MemberDelete.mm" method="post">
+		<input type = "submit" value =" 탈퇴하기" class="btn">
+	</form>
 	</article>
 
 	</div> 

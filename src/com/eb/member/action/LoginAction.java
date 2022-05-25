@@ -2,7 +2,6 @@ package com.eb.member.action;
 
 import java.io.PrintWriter;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -33,27 +32,39 @@ public class LoginAction implements Action {
 			int result = dao.login(dto);
 			
 			//result 결과에 따라 동작 설정
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			//System.out.println("M : result - " + result );
+			ActionForward forward = new ActionForward();
 
 			if(result == -1 ){	//비회원
-			
+				out.println("<script language='javascript'>");
+				out.println("alert('로그인 정보가 잘못되었습니다.')");
+				out.println("location.href='./Login.mm';");
+				out.println("</script>");
 				return null;
+				
 				
 			}else if(result == 0){
 				
+				out.println("<script language='javascript'>");
+				out.println("alert('로그인 정보가 없습니다.')");
+				out.println("location.href='./Login.mm';");
+				out.println("</script>");
 				return null;
-				
-			}else{ //result == 1 \
+			}
+			
+			else{ //result == 1 \
 				//세션 생셩 & 세션에 id 저장
 				HttpSession session = request.getSession();
 				session.setAttribute("id", dto.getId());
-
-				//페이지 이동
-				ActionForward forward = new ActionForward();
-				forward.setPath("./main/main.jsp");
-				forward.setRedirect(false);
-				return forward;
-			}
 			
+				//페이지 이동
+				forward.setPath("./Main.ma");
+				forward.setRedirect(true);
+				return forward;
+			
+			}
 		
 	}
 

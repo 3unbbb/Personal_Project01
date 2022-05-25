@@ -261,7 +261,34 @@ public class MemberDAO {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}finally {
+				closeDB();
 			}
+			
+			
+		}
+
+		public void memberDelete(String id) {
+
+			try {
+				con = getCon();
+				
+				sql = "delete from eb_member where id =?";
+				pstmt = con.prepareStatement(sql);
+				
+				pstmt.setString(1, id);
+				
+				pstmt.executeUpdate();
+				
+				System.out.println(id + "님 탈퇴 완료!");
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeDB();
+			}
+			
 			
 			
 		}

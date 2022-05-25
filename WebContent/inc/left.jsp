@@ -33,7 +33,7 @@
 											</ul>
 										
 										<li><a href="./MemberInfo.mm">마이페이지</a></li>
-										<li><a href="#">Etiam Dolore</a></li>
+										<li><a href="./Mail.ma">Mail 보내기</a></li>
 
 										<li><a href="#">Maximus Erat</a></li>
 
