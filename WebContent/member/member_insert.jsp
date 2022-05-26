@@ -44,11 +44,18 @@
 					form.company.focus();
 					return false;
 				}if(document.userInsert.postcode.value ==""){
-					alert("회사를 입력해주세요");
+					alert("우편번호를 입력해주세요");
+					form.company.focus();
+					return false;
+				}if(document.userInsert.address.value ==""){
+					alert("주소를 입력해주세요");
+					form.company.focus();
+					return false;
+				}if(document.userInsert.detailAddress.value ==""){
+					alert("상세주소를 입력해주세요");
 					form.company.focus();
 					return false;
 				}
-	
 			}
 		</script>
 		

@@ -41,19 +41,29 @@ public class MemberInsertAction implements Action {
 		MemberDAO dao = new MemberDAO();
 		
 		//회원가입 동작 실행
-		dao.insertMember(dto);
+		int result = dao.insertMember(dto);
 		
-/*		PrintWriter out = response.getWriter();
-		out.println("<script>alert('회원가입 완료. 로그인페이지로 이동합니다.');</script>");
-		out.flush();*/
-
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		//System.out.println("M : result - " + result );
+		ActionForward forward = new ActionForward();
+		
+		if(result == -1){
+			
+			out.println("<script language='javascript'>");
+			out.println("alert('이미 존재하는 아이디입니다.')");
+			out.println("location.href=history.go(-1);");
+			out.println("</script>");
+			return null;
+		}else{
 		
 		//페이지 이동("./MemberList.mm")
-		ActionForward forward = new ActionForward();
-		forward.setPath("./Login.mm");
-		forward.setRedirect(true);
+			out.println("<script language='javascript'>");
+			out.println("alert('회원가입이 완료되었습니다.')");
+			out.println("location.href='Login.mm';");
+			out.println("</script>");
 		
-		
+		}
 		return forward;
 	}
 

@@ -59,36 +59,63 @@ public class MemberDAO {
 		
 		//insertMember(MemberDTO dto)
 		
-		public void insertMember(MemberDTO dto){
+		public int insertMember(MemberDTO dto){
+			int result = -1;
 			
 			try {
 				//1.2. 디비연결
 				con = getCon();
 				
-				//sql 작성& pstmp
-				sql = "insert into eb_member (id, pass, name, age, tel, "
-						+ "email, company, department, postcode, address, detailAddress) "
-						+ "values(?,?,?,?,?,?,?,?,?,?,?)";
-				pstmt = con.prepareStatement(sql);
 				
+				sql = "select id from eb_member where id=?";	//아이디 같은게 있으면
+				pstmt = con.prepareStatement(sql);
 				
 				//???
 				pstmt.setString(1, dto.getId());
-				pstmt.setString(2, dto.getPass());
-				pstmt.setString(3, dto.getName());
-				pstmt.setInt(4, dto.getAge());
-				pstmt.setString(5, dto.getTel());
-				pstmt.setString(6, dto.getEmail());
-				pstmt.setString(7, dto.getCompany());
-				pstmt.setString(8, dto.getDepartment());
-				pstmt.setString(9, dto.getPostcode());
-				pstmt.setString(10, dto.getAddress());
-				pstmt.setString(11, dto.getDetailAddress());
 				
 				//sql 실행
-				pstmt.executeUpdate();
+				rs = pstmt.executeQuery();
 				
-				System.out.println("DAO : 회원가입 완료!");
+				//데이터 처리
+				
+				if(rs.next()){
+					if(dto.getId().equals(rs.getString("id"))){
+						
+						result = -1; // 아이디 중복
+						
+						}
+					
+					}else{
+						
+						//sql 작성& pstmp
+						sql = "insert into eb_member (id, pass, name, age, tel, "
+								+ "email, company, department, postcode, address, detailAddress) "
+								+ "values(?,?,?,?,?,?,?,?,?,?,?)";
+						pstmt = con.prepareStatement(sql);
+						
+						
+						//???
+						pstmt.setString(1, dto.getId());
+						pstmt.setString(2, dto.getPass());
+						pstmt.setString(3, dto.getName());
+						pstmt.setInt(4, dto.getAge());
+						pstmt.setString(5, dto.getTel());
+						pstmt.setString(6, dto.getEmail());
+						pstmt.setString(7, dto.getCompany());
+						pstmt.setString(8, dto.getDepartment());
+						pstmt.setString(9, dto.getPostcode());
+						pstmt.setString(10, dto.getAddress());
+						pstmt.setString(11, dto.getDetailAddress());
+						
+						//sql 실행
+						pstmt.executeUpdate();
+						
+						System.out.println("DAO : 회원가입 완료!");
+						
+						result = 1; 
+					}
+				
+		
 				
 				
 			} catch (Exception e) {
@@ -98,6 +125,7 @@ public class MemberDAO {
 				closeDB();
 			}
 			
+			return result;
 		}
 		
 		//insertMember
