@@ -43,38 +43,30 @@
 	<input type = "hidden" value = "<%= session.getAttribute("id")%>">
 	<!-- 게시판 -->
 	<article>
-		<h1>게시판</h1>
+		<h1>갤러리 게시판</h1>
 		<table id="notice">
+
+		 <c:set var="size" value="${galleryList.size() }"/>
+		 <c:set var="col" value="4"/>
+		 <c:set var="row" value="${(size/col + (size%col>0? 1:0)) }"/>
+		 <c:set var="galleryCnt" value="0"/>
+
+		<c:set var="list" value="${galleryList }" />
+		
+   		 <c:forEach begin="1" end="${row }" step="1">
 			<tr>
-				<th>글번호</th>
-				<th>썸네일</th>
- 			 	<th>제목</th>
-   				<th>글쓴이</th>
-   				<th>작성일</th>
-				<th>조회수</th>
-				
-			</tr>
-   		 <c:forEach var = "dto" items="${boardList }">
-			<tr>
-				<td>${dto.num }</td>
-				<td class="left" >
-				
-					<c:if test="${dto.re_lev > 0 }">
-		        		<img src="./images/level.gif" width="${dto.re_lev * 10 }">
-		        		<img src="./images/re.png" width = "15">
-		     	  </c:if> 
-		     	  
-				<a href="./BoardContent.bo?num=${dto.num }&pageNum=<%=pageNum%>">
-				${dto.subject }
-				</a>
+			<c:forEach begin="1" end="${col }" step="1">
+				<c:if test="${size > galleryCnt }">
+				<td>
+					<img  src="./gallery_upload/${list[galleryCnt].image.split(',')[0] }"
+						 width ="160" height="160" onclick="href"> <br>
+					<a href ="./GalleryContents.ga?num=${list[galleryCnt].num}">${list[galleryCnt].subject }</a>
 				</td>
-				
-   				<td>${dto.b_Id }</td>
-   				<td>${dto.date }</td>
-   				<td>${dto.read_count }</td>
-   				
-   			</tr>
+				</c:if>
+			<c:set var="galleryCnt" value="${galleryCnt+1 }" />
 			</c:forEach>
+		</tr>
+		</c:forEach>			
 	</table>
 		
 		<div id="page_control">
@@ -83,18 +75,18 @@
 			
 		if(startPage > pageBlock){
 		%>
-		<a href="./BoardList.bo?pageNum=<%=startPage-pageBlock%>">[이전]</a>
+		<a href="./GalleryList.bo?pageNum=<%=startPage-pageBlock%>">[이전]</a>
 		<% 
 		}
 		
 		for(int i = startPage;i<=endPage;i++){
 			%>
-				<a href="./BoardList.bo?pageNum=<%=i%>">[<%=i %>]</a>
+				<a href="./GalleryList.bo?pageNum=<%=i%>">[<%=i %>]</a>
 			<%
 		}
 		if(endPage > pageCount){
 			%>
-			<a href="./BoardList.bo?pageNum=<%=startPage+pageBlock%>">[다음]</a>
+			<a href="./GalleryList.bo?pageNum=<%=startPage+pageBlock%>">[다음]</a>
 			<% 	
 			
 		}
@@ -105,7 +97,7 @@
 		
 	</article>
 	<section class="wirte_search">
-    <input type = "button" value="write" onclick=" location.href ='./BoardWrite.bo';">
+    <input type = "button" value="write" onclick=" location.href ='./GalleryWrite.ga';">
     
 	<form method="post" action="#">
 		<input type="button" value="search" onclick = "">

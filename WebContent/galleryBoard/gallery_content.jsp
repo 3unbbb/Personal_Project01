@@ -1,4 +1,4 @@
-<%@page import="com.eb.board.db.BoardDTO"%>
+<%@page import="com.eb.gallery.db.GalleryDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,7 +35,7 @@
 	
 	<%
 	//보낸정보 받기
-	BoardDTO dto =(BoardDTO)request.getAttribute("dto");
+	GalleryDTO dto =(GalleryDTO)request.getAttribute("dto");
  
  	String pageNum = (String)request.getAttribute("pageNum");
 	%>
@@ -50,7 +50,7 @@
 				<td>글번호</td>
 				<td>${dto.num }</td>
 				<td>작성자</td>
-				<td>${dto.b_Id }</td>
+				<td>${dto.id }</td>
 				<td>조회수</td>
 				<td>${dto.read_count }</td>
 				<td>작성일</td>
@@ -66,15 +66,19 @@
 				<td colspan = "8">${dto.content }</td>
 			</tr>
 			<tr>
-				<td colspan = "8">${dto.file }</td>
+				<td colspan = "8">
+					<img src="./gallery_upload/${dto.image.split(',')[0] }" width="600" height="800">
+    	  			<img src="./gallery_upload/${dto.image.split(',')[1] }" width="600" height="800">
+    	  			<img src="./gallery_upload/${dto.image.split(',')[2] }" width="600" height="800">
+				</td>
 			</tr>
 			
 			<tr>
 				<td>첨부파일</td>
 				<td colspan="4">
-					<a href="./upload/${dto.file }">${dto.file }</a>
+					<a href="./upload/${dto.image }">${dto.image }</a>
 					<hr>
-	    			<a href = "./center/fileDown.jsp?fileName=${dto.file }">${dto.file }</a>
+	    			<a href = "./galleryBoard/fileDown.jsp?fileName=${dto.image }">${dto.image }</a>
 					</td>
 			</tr>
 	</table>
@@ -88,15 +92,14 @@
 		
 		
 		
-    <input type = "button" value="목록" onclick="location.href='./BoardList.bo?pageNum=<%=pageNum %>';">
-    <input type = "button" value="답글" onclick="location.href='./BoardRewrite.bo?num=${dto.num }&re_ref=<%=dto.getRe_ref() %>&re_lev=<%=dto.getRe_lev() %>&re_seq=<%=dto.getRe_seq() %>';">
+    <input type = "button" value="목록" onclick="location.href='./GalleryList.bo?pageNum=<%=pageNum %>';">
     
-    <input type = "hidden" value = <%=dto.getB_Id() %>>
+    <input type = "hidden" value = <%=dto.getId() %>>
     <input type = "hidden" value = <%=session.getAttribute("id") %>>
     <%
-    if(session.getAttribute("id").equals(dto.getB_Id())){ %>
-    <input type = "button" value="수정" onclick="location.href='./BoardModify.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
-    <input type = "button" value="삭제" onclick="location.href='./BoardDelete.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
+    if(session.getAttribute("id").equals(dto.getId())){ %>
+    <input type = "button" value="수정" onclick="location.href='./GalleryModify.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
+    <input type = "button" value="삭제" onclick="location.href='./GalleryDelete.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
     
    <% } %>
     
