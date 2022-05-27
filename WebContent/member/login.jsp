@@ -55,7 +55,7 @@
 			<div class="row gtr-uniform">
 				<div class="col-6 col-12-xsmall">
 					<input type="text" name="id"   placeholder="아이디" /> <br>
-					<input type="text" name="pass" placeholder="비밀번호" /> <br>
+					<input type="password" name="pass" placeholder="비밀번호" /> <br>
 					<input type ="submit" value ="로그인">
 					
 				</div>

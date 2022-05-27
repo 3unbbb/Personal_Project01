@@ -67,6 +67,7 @@
 			</tr>
 			<tr>
 				<td colspan = "8">
+		
 					<img src="./gallery_upload/${dto.image.split(',')[0] }" width="600" height="800">
     	  			<img src="./gallery_upload/${dto.image.split(',')[1] }" width="600" height="800">
     	  			<img src="./gallery_upload/${dto.image.split(',')[2] }" width="600" height="800">
@@ -76,9 +77,9 @@
 			<tr>
 				<td>첨부파일</td>
 				<td colspan="4">
-					<a href="./upload/${dto.image }">${dto.image }</a>
-					<hr>
-	    			<a href = "./galleryBoard/fileDown.jsp?fileName=${dto.image }">${dto.image }</a>
+	    			<a href = "./galleryBoard/fileDown.jsp?fileName=${dto.image.split(',')[0] }">${dto.image.split(',')[0] }</a><br>
+	    			<a href = "./galleryBoard/fileDown.jsp?fileName=${dto.image.split(',')[1] }">${dto.image.split(',')[1] }</a><br>
+	    			<a href = "./galleryBoard/fileDown.jsp?fileName=${dto.image.split(',')[2] }">${dto.image.split(',')[2] }</a>
 					</td>
 			</tr>
 	</table>
@@ -92,14 +93,14 @@
 		
 		
 		
-    <input type = "button" value="목록" onclick="location.href='./GalleryList.bo?pageNum=<%=pageNum %>';">
+    <input type = "button" value="목록" onclick="location.href='./GalleryList.ga?pageNum=<%=pageNum %>';">
     
     <input type = "hidden" value = <%=dto.getId() %>>
     <input type = "hidden" value = <%=session.getAttribute("id") %>>
     <%
     if(session.getAttribute("id").equals(dto.getId())){ %>
-    <input type = "button" value="수정" onclick="location.href='./GalleryModify.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
-    <input type = "button" value="삭제" onclick="location.href='./GalleryDelete.bo?num=${dto.num }&pageNum=<%=pageNum %>';">
+    <input type = "button" value="수정" onclick="location.href='./GalleryModify.ga?num=${dto.num }&pageNum=<%=pageNum %>';">
+    <input type = "button" value="삭제" onclick="location.href='./GalleryDelete.ga?num=${dto.num }&pageNum=<%=pageNum %>';">
     
    <% } %>
     

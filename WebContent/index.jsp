@@ -15,8 +15,8 @@
  //response.sendRedirect("./Login.mm");
  //response.sendRedirect("./BoardWrite.bo");
 //response.sendRedirect("./BoardList.bo");
-//response.sendRedirect("./Main.ma");
-response.sendRedirect("./GalleryWrite.ga");
+response.sendRedirect("./Main.ma");
+//response.sendRedirect("./GalleryWrite.ga");
 
 
 %>   

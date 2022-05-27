@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.eb.board.action.BoardContentAction;
+import com.eb.board.action.BoardDeleteAction;
 import com.eb.board.action.BoardListAction;
+import com.eb.board.action.BoardModifyAction;
+import com.eb.board.action.BoardUpdateAction;
 import com.eb.board.action.BoardWriteAction;
 
 @WebServlet("*.ga")
@@ -99,7 +102,42 @@ public class GalleryFrontController extends HttpServlet{
 			}
 		
 		
+		}else if(command.equals("/GalleryModify.ga")){
+			System.out.println("C : /GalleryModify.ga 호출");
+			
+			action = new GalleryModifyAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else if(command.equals("/GalleryUpdateAction.ga")){
+			System.out.println("/GalleryUpdateAction.ga 호출");
+			
+			action = new GalleryUpdateAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}else if(command.equals("/GalleryDelete.ga")){
+			System.out.println("C : /GalleryDelete.ga 호출");
+			
+			action = new GalleryDeleteAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+			
 		
 		
 		

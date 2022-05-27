@@ -364,7 +364,7 @@ public class GalleryDAO {
 				
 				dto.setContent(rs.getString("content"));
 				dto.setDate(rs.getDate("date"));
-				dto.setImage(rs.getString("Image"));
+				dto.setImage(rs.getString("image"));
 				dto.setIp(rs.getString("ip"));
 				dto.setNum(rs.getInt("num"));
 				dto.setRe_lev(rs.getInt("re_lev"));
