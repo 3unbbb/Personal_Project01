@@ -1,5 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 /*
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -20,7 +21,7 @@ section, summary, time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-family: 'Do Hyeon', sans-serif;
   vertical-align: baseline; }
 
 div#page_control{
@@ -101,7 +102,7 @@ body {
 /* Type */
 body, input, select, textarea {
   color: #7f888f;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Do Hyeon', sans-serif;
   font-size: 13pt;
   font-weight: 400;
   line-height: 1.65; }
@@ -141,7 +142,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #3d4449;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Do Hyeon', sans-serif;
   font-weight: 700;
   line-height: 1.5;
   margin: 0 0 1em 0; }
@@ -212,7 +213,7 @@ code {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  font-family: "Courier New", monospace;
+  font-family: 'Do Hyeon', sans-serif;
   font-size: 0.9em;
   margin: 0 0 2em 0; }
   pre code {
@@ -999,7 +1000,7 @@ section.special, article.special {
   text-align: center; }
 
 header p {
-  font-family: "Roboto Slab", serif;
+  font-family: 'Do Hyeon', sans-serif;
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 0.075em;
@@ -1129,7 +1130,7 @@ input[type="radio"] {
       text-rendering: auto;
       line-height: 1;
       text-transform: none !important;
-      font-family: 'Font Awesome 5 Free';
+      font-family: 'Do Hyeon', sans-serif;
       font-weight: 900; }
     input[type="checkbox"] + label:before,
     input[type="radio"] + label:before {
@@ -1208,7 +1209,7 @@ input[type="radio"] + label:before {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Do Hyeon', sans-serif;
     font-weight: 400; }
   .icon > .label {
     display: none; }
@@ -1217,7 +1218,7 @@ input[type="radio"] + label:before {
   .icon.solid:before {
     font-weight: 900; }
   .icon.brands:before {
-    font-family: 'Font Awesome 5 Brands'; }
+    font-family: 'Do Hyeon', sans-serif; }
 
 /* Image */
 .image {
@@ -1382,7 +1383,7 @@ ul.contact {
       text-rendering: auto;
       line-height: 1;
       text-transform: none !important;
-      font-family: 'Font Awesome 5 Free';
+      font-family: 'Do Hyeon', sans-serif;
       font-weight: 400; }
     ul.contact li:before {
       color: #2669cd;
@@ -1508,7 +1509,7 @@ button,
   color: #2669cd !important;
   cursor: pointer;
   display: inline-block;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Do Hyeon', sans-serif;
   font-size: 0.8em;
   font-weight: 700;
   height: 3.5em;
@@ -1901,7 +1902,7 @@ button,
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Do Hyeon', sans-serif;
     font-weight: 900; }
   #search form:before {
     -moz-transform: scaleX(-1);
@@ -1993,7 +1994,7 @@ button,
       text-rendering: auto;
       line-height: 1;
       text-transform: none !important;
-      font-family: 'Font Awesome 5 Free';
+      font-family: 'Do Hyeon', sans-serif;
       font-weight: 900; }
     #sidebar .toggle:before {
       content: '\f0c9';
@@ -2096,7 +2097,7 @@ button,
   #header .logo {
     border-bottom: 0;
     color: inherit;
-    font-family: "Roboto Slab", serif;
+    font-family: 'Do Hyeon', sans-serif;
     font-size: 1.125em; }
   #header .icons {
     text-align: right; }
@@ -2208,7 +2209,7 @@ button,
   -ms-user-select: none;
   user-select: none;
   color: #3d4449;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Do Hyeon', sans-serif;
   font-weight: 400;
   letter-spacing: 0.075em;
   list-style: none;
@@ -2241,7 +2242,7 @@ button,
         text-rendering: auto;
         line-height: 1;
         text-transform: none !important;
-        font-family: 'Font Awesome 5 Free';
+        font-family: 'Do Hyeon', sans-serif;
         font-weight: 900; }
       #menu ul a.opener:before, #menu ul span.opener:before {
         -moz-transition: color 0.2s ease-in-out, -moz-transform 0.2s ease-in-out;

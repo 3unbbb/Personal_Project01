@@ -530,5 +530,41 @@ public class BoardDAO {
 	
 	//boardReinsert(num)
 	
-	
+	//ajax
+		public String mainBoardList(){
+			String result = "";
+			
+			try {
+				con=getCon();
+				
+				sql = "select * from eb_board";
+				pstmt = con.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				
+					
+					while(rs.next()){
+						result +="{";
+						result += "\"subject\":" + "\""+rs.getString("subject")+"\",";
+						result += "\"read_count\":" + "\""+rs.getString("read_count")+"\",";
+						result += "\"date\":" + "\""+rs.getString("date")+"\"";
+						result +="},";
+					}
+								
+						if(result.length()>0){
+							result = result.substring(0,result.length()-1);
+						}
+						
+						System.out.println(result);
+						
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeDB();
+			}
+			return result;
+		}
+		
+	//ajax
 }

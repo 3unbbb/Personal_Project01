@@ -1,6 +1,8 @@
+<%@page import="org.eclipse.jdt.internal.compiler.ast.PrefixExpression"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!--
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -10,6 +12,10 @@
 
 	<head>
 		<title>Editorial by HTML5 UP</title>
+		
+		
+		
+		</script>	
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
@@ -31,124 +37,29 @@
 	<section id="banner">
 		<div class="content">
 			<header>
-				<h1>Hello~<br/>
-					today's new!</h1>
-				<p>A free and fully responsive site template</p>
+				<h1>Main Page!</h1>
+					
 			</header>
-				<p>Aenean ornare velit  Pell nullam.</p>
-				<ul class="actions">
-					<li><a href="#" class="button big">Learn More</a></li>
-				</ul>
 		</div>
 		
 	
 		<span class="image object">
-			
+		<img  src="./images/marble.jpg">
 		</span>
 	</section>
 	<!-- news -->
-
-	<!-- 인기글 -->
-	<section>
-		<header class="major">
-			<h2>인기글</h2>
-		</header>
-		<div class="features">
-			<article>
-				<span class="icon fa-gem"></span>
-				<div class="content">
-					<h3>Portitor ullamcorper</h3>
-					<p>Aenean aliqua aliquam.</p>
-				</div>
-			</article>
-			<article>
-				<span class="icon fa-gem"></span>
-				<div class="content">
-					<h3>Portitor ullamcorper</h3>
-					<p>Aenean aliqua aliquam.</p>
-				</div>
-			</article>
-			<article>
-				<span class="icon fa-gem"></span>
-				<div class="content">
-					<h3>Portitor ullamcorper</h3>
-					<p>Aenean aliqua aliquam.</p>
-				</div>
-			</article>
-			<article>
-				<span class="icon fa-gem"></span>
-				<div class="content">
-					<h3>Portitor ullamcorper</h3>
-					<p>Aenean aliqua aliquam.</p>
-				</div>
-			</article>
-										
-		</div>
-	</section>
-	<!-- 인기글 -->
-
-	<section>
-		<header class="major">
-			<h2>인기상품</h2>
-		</header>
-		<div class="posts">
-			<article>
-				<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-				<h3>Interdum aenean</h3>
-				<p>Aenean orntempus aliquam.</p>
-				<ul class="actions">
-					<li><a href="#" class="button">More</a></li>
-				</ul>
-			</article>
-			<article>
-				<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-				<h3>Interdum aenean</h3>
-				<p>Aenean orntempus aliquam.</p>
-				<ul class="actions">
-					<li><a href="#" class="button">More</a></li>
-				</ul>
-			</article>
-			<article>
-				<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-				<h3>Interdum aenean</h3>
-				<p>Aenean orntempus aliquam.</p>
-				<ul class="actions">
-					<li><a href="#" class="button">More</a></li>
-				</ul>
-			</article>
-
-		</div>
-	</section>
-	<!-- 인기글 -->
 								
 		
-	<!-- 인기상품 -->
-	<section>
-		<header class="major">
-			<h2>Ante interdum</h2>
-		</header>
-		<div class="mini-posts">
-			<article>
-				<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-				<p>Aenean orna dolore aliquam.</p>
-			</article>
-		</div>
-		
-		<ul class="actions">
-			<li><a href="#" class="button">More</a></li>
-		</ul>
-	</section>
-
-							<!-- Section -->
+	
 								
 
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+	<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</footer>
 
-						</div>
-					</div>
+	</div>
+</div>
 
 	<!-- Sidebar -->
 		<jsp:include page="../inc/left.jsp"></jsp:include>
