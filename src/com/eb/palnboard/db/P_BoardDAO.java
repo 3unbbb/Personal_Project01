@@ -329,7 +329,7 @@ public class P_BoardDAO {
 
 				
 			}
-			System.out.println(" DAO : 게시판 글 1개 저장완료 ");	
+			System.out.println(" DAO : 게시판 글 1개 조회완료 ");	
 		
 		}catch (Exception e) {
 			e.printStackTrace();

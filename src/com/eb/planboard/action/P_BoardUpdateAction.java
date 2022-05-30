@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.eb.board.db.BoardDAO;
-import com.eb.board.db.BoardDTO;
+import com.eb.palnboard.db.P_BoardDAO;
+import com.eb.palnboard.db.P_BoardDTO;
 
 public class P_BoardUpdateAction implements Action {
 
@@ -39,27 +39,26 @@ public class P_BoardUpdateAction implements Action {
 			String pageNum = request.getParameter("pageNum");
 			
 			//전달된 정보를 저장(Board DTO)
-			BoardDTO dto = new BoardDTO();
+			P_BoardDTO dto = new P_BoardDTO();
 
 			dto.setContent(request.getParameter("content"));
 			dto.setSubject(request.getParameter("subject"));
-			dto.setFile(request.getParameter("file"));
 
 			
-			System.out.println(request.getParameter("b_id"));
+			System.out.println(request.getParameter("id"));
 			System.out.println(request.getParameter("subject"));
 			
 			dto.setIp(request.getRemoteAddr());
 			System.out.println("M : "+ dto);
 			
 			//Board DAO 객체 생성
-			BoardDAO dao = new BoardDAO();
+			P_BoardDAO dao = new P_BoardDAO();
 			
 			//dao 동작실행 insertBoard(dto)
-			dao.updateBoard(num, dto);
+			dao.updateP_Board(num, dto);
 			
 			//페이지 이동
-			forward.setPath("./BoardList.bo");
+			forward.setPath("./P_BoardList.pbo");
 			forward.setRedirect(true);
 			
 			

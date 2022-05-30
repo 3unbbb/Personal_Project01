@@ -75,7 +75,7 @@
 		        		<img src="./images/re.png" width = "15">
 		     	  </c:if> 
 		     	  
-				<a href="./BoardContent.pbo?num=${dto.num }&pageNum=<%=pageNum%>">
+				<a href="./P_BoardContent.pbo?num=${dto.num }&pageNum=<%=pageNum%>">
 				${dto.subject }
 				</a>
 				</td>
@@ -94,18 +94,18 @@
 			
 		if(startPage > pageBlock){
 		%>
-		<a href="./BoardList.pbo?pageNum=<%=startPage-pageBlock%>">[이전]</a>
+		<a href="./P_BoardList.pbo?pageNum=<%=startPage-pageBlock%>">[이전]</a>
 		<% 
 		}
 		
 		for(int i = startPage;i<=endPage;i++){
 			%>
-				<a href="./BoardList.pbo?pageNum=<%=i%>">[<%=i %>]</a>
+				<a href="./P_BoardList.pbo?pageNum=<%=i%>">[<%=i %>]</a>
 			<%
 		}
 		if(endPage > pageCount){
 			%>
-			<a href="./BoardList.pbo?pageNum=<%=startPage+pageBlock%>">[다음]</a>
+			<a href="./P_BoardList.pbo?pageNum=<%=startPage+pageBlock%>">[다음]</a>
 			<% 	
 			
 		}
@@ -117,11 +117,7 @@
 	</article>
 	<section class="wirte_search">
     <input type = "button" value="write" onclick=" location.href ='./P_BoardWrite.pbo';">
-    
-	<form method="post" action="#">
-		<input type="button" value="search" onclick = "">
-		<input type ="text" name = "serach" width ="5">
-	</form>
+   
 	</section>
 	<!-- Search -->
 	

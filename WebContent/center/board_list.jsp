@@ -109,10 +109,6 @@
 	<section class="wirte_search">
     <input type = "button" value="write" onclick=" location.href ='./BoardWrite.bo';">
     
-	<form method="post" action="#">
-		<input type="button" value="search" onclick = "">
-		<input type ="text" name = "serach" width ="5">
-	</form>
 	</section>
 	<!-- Search -->
 	

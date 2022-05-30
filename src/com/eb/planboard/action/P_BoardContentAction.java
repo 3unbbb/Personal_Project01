@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.eb.board.db.BoardDAO;
-import com.eb.board.db.BoardDTO;
+import com.eb.palnboard.db.P_BoardDAO;
+import com.eb.palnboard.db.P_BoardDTO;
 
 public class P_BoardContentAction implements Action {
 
@@ -40,17 +40,17 @@ public class P_BoardContentAction implements Action {
 		
 			
 		//db사용 o, 
-		BoardDAO dao = new BoardDAO();
+		P_BoardDAO dao = new P_BoardDAO();
 		dao.updateReadCount(num);
 		
 		//글 번호에 해당하는 글 정보 가져오기
-		BoardDTO dto = dao.getBoard(num);
+		P_BoardDTO dto = dao.getP_Board(num);
 		
 		request.setAttribute("dto", dto);
 		request.setAttribute("pageNum", pageNum);
 		
 
-		forward.setPath("./center/board_content.jsp");
+		forward.setPath("./planBoard/plan_board_content.jsp");
 		forward.setRedirect(false);
 		return forward;
 	}
