@@ -12,6 +12,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import com.eb.board.db.BoardDTO;
+import com.eb.palnboard.db.P_BoardDTO;
 
 public class MemberDAO {
 	
@@ -257,6 +258,49 @@ public class MemberDAO {
 				}
 				
 				System.out.println("DAO : 회원정보 1개 BoardDTO에 저장완료");
+				
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeDB();
+			}
+			
+			return dto;
+		}
+	
+	//getBoardMember()	
+		
+		//getBoardMember()
+		public P_BoardDTO getP_BoardMember(String id){
+			P_BoardDTO dto = null;
+			try {
+				
+				//db연결
+				con = getCon();
+				
+				//sql , pstmt
+				sql = "select * from eb_member "
+						+ "where id = ?";
+				
+				pstmt = con.prepareStatement(sql);
+				
+				//???
+				pstmt.setString(1, id);
+				
+				//쿼리 실행
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()){
+					dto = new P_BoardDTO();
+					
+
+					dto.setId(rs.getString("id"));
+					dto.setDepartment(rs.getString("department"));
+				}
+				
+				System.out.println("DAO : 회원정보 1개 P_BoardDTO에 저장완료");
 				
 				
 			} catch (Exception e) {

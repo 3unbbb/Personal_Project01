@@ -1,4 +1,4 @@
-package com.eb.board.action;
+package com.eb.planboard.action;
 
 import java.io.PrintWriter;
 
@@ -11,7 +11,7 @@ import com.eb.board.db.BoardDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class BoardReinsertAction implements Action {
+public class P_BoardReinsertAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request,

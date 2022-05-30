@@ -23,7 +23,7 @@
 
 										<li class="opener"> 직무별 게시판</li>
 											<ul>
-												<li><a href="#">[기획]</a></li>
+												<li><a href="./P_BoardList.pbo">[기획]</a></li>
 												<li><a href="#">[인사]</a></li>
 												<li><a href="#">[재무/회계]</a></li>
 												<li><a href="#">[구매/자재]</a></li>
