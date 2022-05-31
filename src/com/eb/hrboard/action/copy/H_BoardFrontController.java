@@ -1,4 +1,4 @@
-package com.eb.planboard.action;
+package com.eb.hrboard.action.copy;
 
 import java.io.IOException;
 
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("*.pbo")
-public class P_BoardFrontController extends HttpServlet{
+@WebServlet("*.hbo")
+public class H_BoardFrontController extends HttpServlet{
 	
 	
 	protected void doProcess(HttpServletRequest request,
@@ -47,22 +47,19 @@ public class P_BoardFrontController extends HttpServlet{
 		Action action = null;
 		ActionForward forward = null;
 		
-		if(command.equals("/P_BoardWrite.pbo")){
-			System.out.println("C : /P_BoardWrite.pbo 호출");
+		if(command.equals("/H_BoardWrite.hbo")){
+			System.out.println("C : /H_BoardWrite.hbo 호출");
 			System.out.println("C : DB사용 o, 정보입력 페이지(view)");
 			
-			
-			forward.setPath("./planBoard/plan_boardWrite.jsp");
+			forward.setPath("./hrBoard/hr_boardWrite.jsp");
 			forward.setRedirect(false);
-			
-			
 	
 			
-		}else if(command.equals("/P_BoardWriteAction.pbo")){
-			System.out.println("C : /P_BoardWriteAction.pbo호출");
+		}else if(command.equals("/H_BoardWriteAction.hbo")){
+			System.out.println("C : /H_BoardWriteAction.hbo호출");
 			System.out.println("C : DB사용 O, 페이지 이동");
 			
-			action = new P_BoardWriteAction();
+			action = new H_BoardWriteAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -71,12 +68,12 @@ public class P_BoardFrontController extends HttpServlet{
 			}
 			
 			
-		}else if(command.equals("/P_BoardList.pbo")){
-			System.out.println("C : /P_BoardList.pbo 호출");
+		}else if(command.equals("/H_BoardList.hbo")){
+			System.out.println("C : /H_BoardList.hbo 호출");
 			System.out.println("db사용 , 페이지 이동 ");
 			//BoardListAction 객체 생성
 			
-			action = new P_BoardListAction();
+			action = new H_BoardListAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -84,10 +81,10 @@ public class P_BoardFrontController extends HttpServlet{
 				e.printStackTrace();
 			}			
 			
-		}else if(command.equals("/P_BoardContent.pbo")){
-			System.out.println("C : P_BoardContent.pbo 호출");
+		}else if(command.equals("/H_BoardContent.hbo")){
+			System.out.println("C : H_BoardContent.hbo 호출");
 			
-			action = new P_BoardContentAction();
+			action = new H_BoardContentAction();
 			
 			try {
 				
@@ -97,21 +94,10 @@ public class P_BoardFrontController extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else if(command.equals("/P_BoardModify.pbo")){
-			System.out.println("C : /P_BoardModify.pbo 호출");
+		}else if(command.equals("/H_BoardModify.hbo")){
+			System.out.println("C : /H_BoardModify.hbo 호출");
 			
-			action = new P_BoardModifyAction();
-			
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}else if(command.equals("/P_BoardUpdateAction.pbo")){
-			System.out.println("/C : P_BoardUpdateAction.pbo 호출");
-			
-			action = new P_BoardUpdateAction();
+			action = new H_BoardModifyAction();
 			
 			try {
 				forward = action.execute(request, response);
@@ -119,11 +105,10 @@ public class P_BoardFrontController extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}else if(command.equals("/H_BoardUpdateAction.hbo")){
+			System.out.println("/C : H_BoardUpdateAction.hbo 호출");
 			
-		}else if(command.equals("/P_BoardDelete.pbo")){
-			System.out.println("C : /P_BoardDelete.pbo 호출");
-			
-			action = new P_BoardDeleteAction();
+			action = new H_BoardUpdateAction();
 			
 			try {
 				forward = action.execute(request, response);
@@ -131,20 +116,32 @@ public class P_BoardFrontController extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else if(command.equals("/P_BoardRewrite.pbo")){
-			System.out.println("C : /P_BoardRewrite.pbo 호출");
 			
-			action = new P_BoardRewriteAction();
+		}else if(command.equals("/H_BoardDelete.hbo")){
+			System.out.println("C : /H_BoardDelete.hbo 호출");
+			
+			action = new H_BoardDeleteAction();
+			
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else if(command.equals("/P_BoardReinsertAction.pbo")){
-			System.out.println("C :/P_BoardReWrtieAction.pbo 호출");
+		}else if(command.equals("/H_BoardRewrite.hbo")){
+			System.out.println("C : /H_BoardRewrite.hbo 호출");
 			
-			action = new P_BoardReinsertAction();
+			action = new H_BoardRewriteAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else if(command.equals("/H_BoardReinsertAction.hbo")){
+			System.out.println("C :/H_BoardReWrtieAction.hbo 호출");
+			
+			action = new H_BoardReinsertAction();
 			
 			try {
 				forward = action.execute(request, response);

@@ -1,4 +1,4 @@
-package com.eb.planboard.action;
+package com.eb.hrboard.action.copy;
 
 import java.io.PrintWriter;
 import java.util.List;
@@ -7,18 +7,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.eb.hrboard.db.copy.H_BoardDAO;
+import com.eb.hrboard.db.copy.H_BoardDTO;
 import com.eb.member.db.MemberDAO;
-import com.eb.palnboard.db.P_BoardDAO;
-import com.eb.palnboard.db.P_BoardDTO;
 
 
-public class P_BoardListAction implements Action {
+public class H_BoardListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-		System.out.println("M : /P_BoardListAction-execute()호출");
+		System.out.println("M : /H_BoardListAction-execute()호출");
 		
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
@@ -40,9 +40,9 @@ public class P_BoardListAction implements Action {
 		
 		//DB 사용 ㅇ => DAO
 				
-		P_BoardDAO dao = new P_BoardDAO();
+		H_BoardDAO dao = new H_BoardDAO();
 		
-		int result = dao.getP_BoardCount();
+		int result = dao.getH_BoardCount();
 		
 		//글이 있을 때 글 정보 전부를 가져오기(List로)
 		//페이징처리
@@ -63,7 +63,7 @@ public class P_BoardListAction implements Action {
 		
 		List boardList = null;
 		if(result>0){
-			boardList = dao.getP_BoardList(startRow, pageSize);
+			boardList = dao.getH_BoardList(startRow, pageSize);
 		}
 		
 		//전체 페이지 수
@@ -82,9 +82,8 @@ public class P_BoardListAction implements Action {
 			}
 			
 		MemberDAO Mdao = new MemberDAO();
-		
 		String De =  (String)Mdao.getP_BoardMember(id);
-		
+			
 		request.setAttribute("De", De);
 		
 		//request영역에 글 정보 저장
@@ -100,8 +99,8 @@ public class P_BoardListAction implements Action {
 		request.setAttribute("endPage", endPage);
 		
 		
-		//페이지이동(./center/P_Board_list.jsp)
-		forward.setPath("./planBoard/plan_board_list.jsp");
+		//페이지이동(./center/H_Board_list.jsp)
+		forward.setPath("./hrBoard/hr_board_list.jsp");
 		forward.setRedirect(false);
 
 		

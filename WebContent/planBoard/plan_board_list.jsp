@@ -40,7 +40,7 @@
 	int startPage = (int)request.getAttribute("startPage");
 	int endPage = (int)request.getAttribute("endPage");
 	P_BoardDTO Bdto = (P_BoardDTO)request.getAttribute("Bdto");
-	String De = Bdto.getDepartment();
+	String De = (String)request.getAttribute("De");
 	%>
 	
 			

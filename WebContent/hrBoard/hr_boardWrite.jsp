@@ -9,7 +9,7 @@
 -->
 <html>
 	<head>
-		<title>답글쓰기</title>
+		<title>글쓰기</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
@@ -47,15 +47,12 @@
 				<h1>글쓰기 페이지</h1>
 			</header>
 			
-	<form action ="./P_BoardReinsertAction.pbo?id=${dto.getId() }&department=${dto.getDepartment() }" method = "post">
-		<input type="hidden" name="num" value ="${param.num }">
-		<input type="hidden" name="re_ref" value ="${param.re_ref }">
-		<input type="hidden" name="re_lev" value ="${param.re_lev }">
-		<input type="hidden" name="re_seq" value ="${param.re_seq }">
+	<form action ="./P_BoardWriteAction.pbo?id=${dto.getId() }&department=${dto.getDepartment() }" method = "post">
+	
 	<table>
 			<tr>
 				<td> 글쓴이</td>
-				<td><input type = "text" name = "id" value = "<%=sessionId %>" disabled="disabled"></td>
+				<td><input type = "text" name = "id" value = "${dto.getId() }" disabled="disabled"></td>
 			</tr>
 
 
@@ -67,6 +64,9 @@
 			<td> 내용</td>
 			<td colspan = "3"><textarea rows = "25" cols="27" name = "content"></textarea></td>
 			</tr>
+
+			
+			
 	</table>
 		<div id ="table_write">
 		<input type ="submit" value ="쓰기" class ="btn">

@@ -1,4 +1,4 @@
-package com.eb.planboard.action;
+package com.eb.hrboard.action.copy;
 
 import java.io.PrintWriter;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import com.eb.member.db.MemberDAO;
 import com.eb.palnboard.db.P_BoardDTO;
 
-public class P_BoardRewriteAction implements Action {
+public class H_BoardRewriteAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request,

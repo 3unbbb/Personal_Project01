@@ -1,4 +1,4 @@
-package com.eb.planboard.action;
+package com.eb.hrboard.action.copy;
 
 import java.io.PrintWriter;
 
@@ -6,20 +6,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.eb.board.db.BoardDAO;
-import com.eb.board.db.BoardDTO;
-import com.eb.member.db.MemberDAO;
-import com.eb.member.db.MemberDTO;
+import com.eb.palnboard.db.P_BoardDAO;
 import com.eb.palnboard.db.P_BoardDTO;
 
-public class P_BoardMemberAction implements Action {
+public class H_BoardUpdateAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-			System.out.println("M : BoardMemberAction-execute()호출");
-			
-			//전달받은 정보 = session의 아이디
+		
+			System.out.println("DAO : BoardUpdateAction-execute()호출");
 			
 			HttpSession session = request.getSession();
 			String id = (String)session.getAttribute("id");
@@ -36,25 +32,36 @@ public class P_BoardMemberAction implements Action {
 
 			out.flush();
 			
-
+			
 			}
-						
-			MemberDAO dao = new MemberDAO();
 			
-			//id에 해당하는 정보 가지고 오기 getMember(id)
+			int num = Integer.parseInt(request.getParameter("num"));
+			String pageNum = request.getParameter("pageNum");
+			
+			//전달된 정보를 저장(Board DTO)
 			P_BoardDTO dto = new P_BoardDTO();
-			
-			dto = dao.getP_BoardMember(id);
-			
-			System.out.println("M - 현재 글쓰기 아이디 : "+ dto.getId());
 
-			request.setAttribute("dto", dto);
-			
+			dto.setContent(request.getParameter("content"));
+			dto.setSubject(request.getParameter("subject"));
 
-			forward.setPath("./planBoard/plan_boardWrite.jsp");
-			forward.setRedirect(false);
-							
-		// TODO Auto-generated method stub
+			
+			System.out.println(request.getParameter("id"));
+			System.out.println(request.getParameter("subject"));
+			
+			dto.setIp(request.getRemoteAddr());
+			System.out.println("M : "+ dto);
+			
+			//Board DAO 객체 생성
+			P_BoardDAO dao = new P_BoardDAO();
+			
+			//dao 동작실행 insertBoard(dto)
+			dao.updateP_Board(num, dto);
+			
+			//페이지 이동
+			forward.setPath("./P_BoardList.pbo");
+			forward.setRedirect(true);
+			
+			
 		return forward;
 	}
 

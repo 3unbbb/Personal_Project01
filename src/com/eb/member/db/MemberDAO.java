@@ -273,8 +273,8 @@ public class MemberDAO {
 	//getBoardMember()	
 		
 		//getBoardMember()
-		public P_BoardDTO getP_BoardMember(String id){
-			P_BoardDTO dto = null;
+		public String getP_BoardMember(String id){
+			String De = null;
 			try {
 				
 				//db연결
@@ -293,11 +293,7 @@ public class MemberDAO {
 				rs = pstmt.executeQuery();
 				
 				if(rs.next()){
-					dto = new P_BoardDTO();
-					
-
-					dto.setId(rs.getString("id"));
-					dto.setDepartment(rs.getString("department"));
+					De = rs.getString("department");
 				}
 				
 				System.out.println("DAO : 회원정보 1개 P_BoardDTO에 저장완료");
@@ -310,7 +306,7 @@ public class MemberDAO {
 				closeDB();
 			}
 			
-			return dto;
+			return De;
 		}
 	
 	//getBoardMember()	

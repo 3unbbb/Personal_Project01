@@ -24,12 +24,12 @@
 										<li class="opener"> 직무별 게시판</li>
 											<ul>
 												<li><a href="./P_BoardList.pbo">[기획]</a></li>
-												<li><a href="#">[인사]</a></li>
-												<li><a href="#">[재무/회계]</a></li>
-												<li><a href="#">[구매/자재]</a></li>
-												<li><a href="#">[생산]</a></li>
-												<li><a href="#">[IT]</a></li>
-												<li><a href="#">[마케팅]</a></li>
+												<li><a href="./H_BoardList.hbo">[인사]</a></li>
+												<li><a href="./A_BoardList.abo">[재무/회계]</a></li>
+												<li><a href="./U_BoardList.ubo">[구매/자재]</a></li>
+												<li><a href="./M_BoardList.mbo">[생산]</a></li>
+												<li><a href="./I_BoardList.ibo">[IT]</a></li>
+												<li><a href="./M_BoardList.mbo">[마케팅]</a></li>
 											</ul>
 										
 										<li><a href="./MemberInfo.mm">마이페이지</a></li>
