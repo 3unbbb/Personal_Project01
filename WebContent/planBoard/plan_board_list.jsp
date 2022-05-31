@@ -1,3 +1,4 @@
+<%@page import="com.eb.board.db.BoardDTO"%>
 <%@page import="com.eb.palnboard.db.P_BoardDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -38,18 +39,18 @@
 	int pageBlock = (int)request.getAttribute("pageBlock");
 	int startPage = (int)request.getAttribute("startPage");
 	int endPage = (int)request.getAttribute("endPage");
-	P_BoardDTO dto = (P_BoardDTO) request.getAttribute("dto");
-	
+	P_BoardDTO Bdto = (P_BoardDTO)request.getAttribute("Bdto");
+	String De = Bdto.getDepartment();
 	%>
 	
+			
 	<%	String sessionId = (String)session.getAttribute("id");
 	
-		if(sessionId == null){
+		if(De.equals("strategy")==false ){
 			 %><script>
-			 alert('로그인 후 사용가능합니다.');
-			 location.href='./Login.mm';</script><%
+			 alert('기획부서만 사용할 수 있습니다.');
+			 location.href='./Main.ma';</script><%
 		}
-
 	
 	%>
 	<!-- 게시판 -->
@@ -58,7 +59,6 @@
 		<table id="notice">
 			<tr>
 				<th>글번호</th>
-				<th>썸네일</th>
  			 	<th>제목</th>
    				<th>글쓴이</th>
    				<th>작성일</th>

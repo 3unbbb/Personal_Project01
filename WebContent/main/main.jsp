@@ -36,16 +36,27 @@
 	<!-- news -->
 	<section id="banner">
 		<div class="content">
-			<header>
+			<header width ="50%">
 				<h1>Main Page!</h1>
-					
+				<ul class="actions">
+					<li><a href="./BoardList.bo" class="button big">Learn More</a></li>
+				</ul>	
 			</header>
 		</div>
 		
-	
+
 		<span class="image object">
-		<img  src="./images/marble.jpg">
+		<h2>오늘의 인기글</h2>
+		<table>
+		 <c:forEach var = "dto" items="${boardList }">
+			<tr>
+				<td class="left" >${dto.subject }</td>
+   				</tr>
+			</c:forEach>
+		
+		</table>
 		</span>
+
 	</section>
 	<!-- news -->
 								

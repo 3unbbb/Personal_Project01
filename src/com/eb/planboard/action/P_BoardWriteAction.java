@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.eb.board.db.BoardDTO;
+import com.eb.member.db.MemberDAO;
 import com.eb.palnboard.db.P_BoardDAO;
 import com.eb.palnboard.db.P_BoardDTO;
 
@@ -37,7 +39,8 @@ public class P_BoardWriteAction implements Action{
 		
 		
 		}
-		
+		MemberDAO Mdao = new MemberDAO();
+		BoardDTO Bdto  =  Mdao.getBoardMember(id);
 			
 		
 		//전달된 정보를 저장(Board DTO)
@@ -52,6 +55,8 @@ public class P_BoardWriteAction implements Action{
 		
 		//Board DAO 객체 생성
 		P_BoardDAO dao = new P_BoardDAO();
+
+		
 		
 		//dao 동작실행 insertBoard(dto)
 		dao.insertP_Board(dto);

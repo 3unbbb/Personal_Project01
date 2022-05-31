@@ -75,11 +75,11 @@
 	
 	<!-- 게시판 -->
 	<article>
-		<h1>회원 리스트</h1>
+		<h1>회원 정보</h1>
 		
 	<form action="./MemberInfoUpdate.mm" method="post" name="infoForm" onsubmit="return checkLogin();">
 		<table id="notice">
-			<tr><th colspan ="2">회원 정보</th></tr>
+			
 			<tr>
 
 				<td>id</td> 

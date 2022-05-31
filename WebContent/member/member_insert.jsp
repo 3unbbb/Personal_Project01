@@ -16,44 +16,44 @@
 				
 				if(document.userInsert.id.value == ""){
 					alert('아이디를 입력해주세요');
-					form.id.focus();
+					document.userInsert.id.focus();
 					return false;
 					
 				} if(document.userInsert.pass.value ==""){
 					alert("비밀번호를 입력해주세요");
-					form.pass.focus();
+					document.userInsert.pass.focus();
 					return false;
 				}if(document.userInsert.name.value ==""){
 					alert("이름을 입력해주세요");
-					form.name.focus();
+					document.userInsert.name.focus();
 					return false;
 				}if(document.userInsert.age.value ==""){
 					alert("나이를 입력해주세요");
-					form.age.focus();
+					document.userInsert.age.focus();
 					return false;
 				}if(document.userInsert.tel.value ==""){
 					alert("전화번호를 입력해주세요");
-					form.tel.focus();
+					document.userInsert.tel.focus();
 					return false;
 				}if(document.userInsert.email.value ==""){
 					alert("이메일을 입력해주세요");
-					form.email.focus();
+					document.userInsert.email.focus();
 					return false;
 				}if(document.userInsert.company.value ==""){
 					alert("회사를 입력해주세요");
-					form.company.focus();
+					document.userInsert.company.focus();
 					return false;
 				}if(document.userInsert.postcode.value ==""){
 					alert("우편번호를 입력해주세요");
-					form.company.focus();
+					document.userInsert.company.focus();
 					return false;
 				}if(document.userInsert.address.value ==""){
 					alert("주소를 입력해주세요");
-					form.company.focus();
+					document.userInsert.company.focus();
 					return false;
 				}if(document.userInsert.detailAddress.value ==""){
 					alert("상세주소를 입력해주세요");
-					form.company.focus();
+					document.userInsert.company.focus();
 					return false;
 				}
 			}

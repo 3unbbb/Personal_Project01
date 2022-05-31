@@ -49,7 +49,6 @@
 		<table id="notice">
 			<tr>
 				<th>글번호</th>
-				<th>썸네일</th>
  			 	<th>제목</th>
    				<th>글쓴이</th>
    				<th>작성일</th>
@@ -69,9 +68,12 @@
 				<a href="./BoardContent.bo?num=${dto.num }&pageNum=<%=pageNum%>">
 				${dto.subject }
 				</a>
+				<c:if test="${dto.file != null }">
+		   			<img src="./images/save.png" width="16" height="16">
+		   		</c:if>
 				</td>
 				
-   				<td>${dto.b_Id }</td>
+   				<td>${dto.b_Company }</td>
    				<td>${dto.date }</td>
    				<td>${dto.read_count }</td>
    				

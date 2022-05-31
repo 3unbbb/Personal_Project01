@@ -62,8 +62,14 @@ public class MailSendFrontController extends HttpServlet{
 			message.setSentDate(new java.util.Date());
 			
 			Transport.send(message);
-			out.print("<h3>메일이 정상적으로 전송되었습니다.</h3>");
+			//out.print("<h3>메일이 정상적으로 전송되었습니다.</h3>");
+
+			out.println("<script language='javascript'>");
+			out.println("alert('메일이 정상적으로 전송되었습니다.')");
+			out.println("location.href='./Main.ma';");
+			out.println("</script>");
 			
+			out.flush();
 			
 			
 		} catch (Exception e) {

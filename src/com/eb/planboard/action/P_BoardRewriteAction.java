@@ -6,9 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.eb.board.db.BoardDAO;
-import com.eb.board.db.BoardDTO;
 import com.eb.member.db.MemberDAO;
+import com.eb.palnboard.db.P_BoardDTO;
 
 public class P_BoardRewriteAction implements Action {
 
@@ -42,17 +41,16 @@ public class P_BoardRewriteAction implements Action {
 			MemberDAO dao = new MemberDAO();
 			
 			//id에 해당하는 정보 가지고 오기 getMember(id)
-			BoardDTO dto = new BoardDTO();
+			P_BoardDTO dto = new P_BoardDTO();
 			
-			dto = dao.getBoardMember(id);
+			dto = dao.getP_BoardMember(id);
 			
-			System.out.println("M - dto : " + dto.getB_Company());
-			System.out.println("M - 현재 글쓰기 아이디 : "+ dto.getB_Id());
+			System.out.println("M - 현재 글쓰기 아이디 : "+ dto.getId());
 
 			request.setAttribute("dto", dto);
 			
 
-			forward.setPath("./center/board_rewrite.jsp");
+			forward.setPath("./planBoard/plan_board_rewrite.jsp");
 			forward.setRedirect(false);
 							
 		// TODO Auto-generated method stub

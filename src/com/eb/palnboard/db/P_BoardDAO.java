@@ -486,9 +486,9 @@ public class P_BoardDAO {
 					
 					sql = "insert into eb_plan_board(num,id,department,subject,content,"
 							+"read_count,re_ref,re_lev,re_seq,date,ip) "
-							+"values(?,?,?,?,"
+							+"values(?,?,?,?,?,"
 							+ "?,?,?,?,"
-							+ "now(),?,?)";
+							+ "now(),?)";
 					
 					pstmt = con.prepareStatement(sql);
 					

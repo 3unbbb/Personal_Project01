@@ -84,8 +84,7 @@ public class P_BoardFrontController extends HttpServlet{
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-			
+			}			
 			
 		}else if(command.equals("/P_BoardContent.pbo")){
 			System.out.println("C : P_BoardContent.pbo 호출");
@@ -134,8 +133,8 @@ public class P_BoardFrontController extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else if(command.equals("/BoardRewrite.pbo")){
-			System.out.println("C : /BoardRewrite.pbo 호출");
+		}else if(command.equals("/P_BoardRewrite.pbo")){
+			System.out.println("C : /P_BoardRewrite.pbo 호출");
 			
 			action = new P_BoardRewriteAction();
 			try {
@@ -145,7 +144,7 @@ public class P_BoardFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 		}else if(command.equals("/P_BoardReinsertAction.pbo")){
-			System.out.println("C :/P_BoardReinsertAction.pbo 호출");
+			System.out.println("C :/P_BoardReWrtieAction.pbo 호출");
 			
 			action = new P_BoardReinsertAction();
 			

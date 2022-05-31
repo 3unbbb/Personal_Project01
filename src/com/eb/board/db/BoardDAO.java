@@ -167,7 +167,9 @@ public class BoardDAO {
 			con = getCon();
 			
 			//sql & pstmt
-			sql = "select * from eb_board order by num desc limit 0,5";
+			sql = "select * from "
+					+ "eb_board where date_format(date,'%Y-%M-%d')=date_format(now(),'%Y-%M-%d') "
+					+ " order by read_count desc limit 5";
 			pstmt = con.prepareStatement(sql);
 			
 			

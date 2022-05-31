@@ -47,7 +47,7 @@
 				<h1>글쓰기 페이지</h1>
 			</header>
 			
-	<form action ="./BoardReinsertAction.bo?b_id=${dto.getB_Id() }&b_company=${dto.getB_Company() }&b_department=${dto.getB_Department() }" method = "post" enctype="multipart/form-data">
+	<form action ="./P_BoardReinsertAction.pbo?id=${dto.getId() }&department=${dto.getDepartment() }" method = "post">
 		<input type="hidden" name="num" value ="${param.num }">
 		<input type="hidden" name="re_ref" value ="${param.re_ref }">
 		<input type="hidden" name="re_lev" value ="${param.re_lev }">
@@ -55,9 +55,7 @@
 	<table>
 			<tr>
 				<td> 글쓴이</td>
-				<td><input type = "text" name = "b_id" value = "${dto.getB_Id() }" disabled="disabled"></td>
-				<td> 회사</td>
-				<td><input type = "text" name = "b_company" value = "${dto.getB_Company() }" disabled="disabled"></td>
+				<td><input type = "text" name = "id" value = "${dto.getId() }" disabled="disabled"></td>
 			</tr>
 
 
@@ -69,12 +67,6 @@
 			<td> 내용</td>
 			<td colspan = "3"><textarea rows = "25" cols="27" name = "content"></textarea></td>
 			</tr>
-			<tr>
-			<td> 파일</td>
-			<td colspan = "3"><input type ="file" name = "file"></td>
-			</tr>
-			
-			
 	</table>
 		<div id ="table_write">
 		<input type ="submit" value ="쓰기" class ="btn">

@@ -41,6 +41,7 @@ public class BoardDeleteAction implements Action {
 		//DB사용
 		BoardDAO dao = new BoardDAO();
 		dao.deleteBoard(num);
+
 		
 		//페이지 이동
 		forward.setPath("./BoardList.bo");
