@@ -1,4 +1,4 @@
-package com.eb.planboard.action;
+package com.eb.hrboard.action;
 
 import java.io.PrintWriter;
 
@@ -6,15 +6,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.eb.board.db.BoardDTO;
-import com.eb.member.db.MemberDAO;
+import com.eb.hrboard.db.H_BoardDAO;
 
-public class P_BoardMainAction implements Action {
+
+public class H_BoardDeleteAction implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request, 
+	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
+			
+		System.out.println("DAO : BoardDelteAction-execute() 실행");
 		
 		
 		HttpSession session = request.getSession();
@@ -31,20 +32,23 @@ public class P_BoardMainAction implements Action {
 		out.println("</script>");
 
 		out.flush();
+		
+		
 		}
 		
-		MemberDAO dao = new MemberDAO();
-		BoardDTO dto  =  dao.getBoardMember(id);
+		//받아올 정보 : 글 번호
+		int num = Integer.parseInt(request.getParameter("num"));
 		
-		System.out.println("M - dto : " + dto.getB_Department());
-		System.out.println("M - 현재 글쓰기 아이디 : "+ dto.getB_Id());
+		//DB사용
+		H_BoardDAO dao = new H_BoardDAO();
+		dao.deleteBoard(num);
 		
-		request.setAttribute("dto", dto);
+		//페이지 이동
+		forward.setPath("./H_BoardList.hbo");
+		forward.setRedirect(true);
 		
-		forward.setPath("./planBoard/plan_boardWrite.jsp");
-		forward.setRedirect(false);
 		
 		return forward;
-	
 	}
+
 }

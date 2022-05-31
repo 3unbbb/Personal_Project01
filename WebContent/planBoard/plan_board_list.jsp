@@ -1,4 +1,4 @@
-<%@page import="com.eb.board.db.BoardDTO"%>
+
 <%@page import="com.eb.palnboard.db.P_BoardDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -39,7 +39,6 @@
 	int pageBlock = (int)request.getAttribute("pageBlock");
 	int startPage = (int)request.getAttribute("startPage");
 	int endPage = (int)request.getAttribute("endPage");
-	P_BoardDTO Bdto = (P_BoardDTO)request.getAttribute("Bdto");
 	String De = (String)request.getAttribute("De");
 	%>
 	

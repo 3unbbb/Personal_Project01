@@ -47,12 +47,12 @@
 				<h1>글쓰기 페이지</h1>
 			</header>
 			
-	<form action ="./P_BoardWriteAction.pbo?id=${dto.getId() }&department=${dto.getDepartment() }" method = "post">
+	<form action ="./P_BoardWriteAction.pbo?id=${dto.getB_Id() }&department=${dto.getB_Department() }" method = "post">
 	
 	<table>
 			<tr>
 				<td> 글쓴이</td>
-				<td><input type = "text" name = "id" value = "${dto.getId() }" disabled="disabled"></td>
+				<td><input type = "text" name = "id" value = "${dto.getB_Id() }" disabled="disabled"></td>
 			</tr>
 
 

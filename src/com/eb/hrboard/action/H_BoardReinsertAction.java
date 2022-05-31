@@ -1,4 +1,4 @@
-package com.eb.hrboard.action.copy;
+package com.eb.hrboard.action;
 
 import java.io.PrintWriter;
 
@@ -6,21 +6,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.eb.board.db.BoardDTO;
-import com.eb.member.db.MemberDAO;
-import com.eb.palnboard.db.P_BoardDAO;
-import com.eb.palnboard.db.P_BoardDTO;
+import com.eb.hrboard.db.H_BoardDAO;
+import com.eb.hrboard.db.H_BoardDTO;
 
-public class H_BoardWriteAction implements Action{
+public class H_BoardReinsertAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		
-		
-		
-		System.out.println("M : BoardWriteAction-execute()호출");
+		System.out.println("M : BoardReinsertAction-execute()호출");
 		
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
@@ -39,37 +35,30 @@ public class H_BoardWriteAction implements Action{
 		
 		
 		}
-		MemberDAO Mdao = new MemberDAO();
-		BoardDTO Bdto  =  Mdao.getBoardMember(id);
-			
 		
-		//전달된 정보를 저장(Board DTO)
-		P_BoardDTO dto = new P_BoardDTO();
-		dto.setContent(request.getParameter("content"));
+		//전달받은정보  num, re_ref, lev, seq, name, pass subject, content
+		//dto에 저장
+	
+		H_BoardDTO dto = new H_BoardDTO();
+		dto.setNum(Integer.parseInt(request.getParameter("num")));
 		dto.setDepartment(request.getParameter("department"));
-		dto.setId(request.getParameter("id"));
+		dto.setId(id);
+		dto.setContent(request.getParameter("content"));
 		dto.setSubject(request.getParameter("subject"));
-		
+		dto.setRe_ref(Integer.parseInt(request.getParameter("re_ref")));
+		dto.setRe_lev(Integer.parseInt(request.getParameter("re_lev")));
+		dto.setRe_seq(Integer.parseInt(request.getParameter("re_seq")));
 		
 		dto.setIp(request.getRemoteAddr());
 		
-		//Board DAO 객체 생성
-		P_BoardDAO dao = new P_BoardDAO();
-
+		//db사용 o
+		H_BoardDAO dao = new H_BoardDAO();
+		dao.boardReinsert(dto);
 		
-		
-		//dao 동작실행 insertBoard(dto)
-		dao.insertP_Board(dto);
-		
-		//페이지 이동 -> 이동정보를 저장해서 컨트롤러 전달
-		forward.setPath("./P_BoardList.pbo");
+		forward.setPath("./H_BoardList.pbo");
 		forward.setRedirect(true);
 		
 		return forward;
-		
 	}
 
-	
-		
-	
 }

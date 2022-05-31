@@ -1,4 +1,4 @@
-package com.eb.hrboard.db.copy;
+package com.eb.hrboard.db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -67,7 +67,7 @@ public class H_BoardDAO {
 
 	
 	//insertH_Board(bb) 시작
-	public void insertH_Board(H_BoardDTO dto){
+	public void insertBoard(H_BoardDTO dto){
 		int num = 0; //글번호 저장 변수
 		try {
 			
@@ -122,7 +122,7 @@ public class H_BoardDAO {
 	}
 	//insertH_Board(bb) 끝
 
-	public int getH_BoardCount() {
+	public int getBoardCount() {
 		int result = 0;
 		
 		try {
@@ -155,7 +155,7 @@ public class H_BoardDAO {
 	}
 	
 	//getboardList();
-	public ArrayList getH_BoardList(){
+	public ArrayList getBoardList(){
 		
 		//글정보를 가져올 List 생성
 		ArrayList boardList = new ArrayList();
@@ -209,7 +209,7 @@ public class H_BoardDAO {
 	//getboardList();
 	
 	//getboardList(int startRow, int endRow);
-	public ArrayList getH_BoardList(int startRow, int pageSize){
+	public ArrayList getBoardList(int startRow, int pageSize){
 		
 		//글정보를 가져올 List 생성
 		ArrayList boardList = new ArrayList();
@@ -294,7 +294,7 @@ public class H_BoardDAO {
 	//updateReadCount(num)
 	
 	//getH_Board(num)
-	public H_BoardDTO getH_Board(int num){
+	public H_BoardDTO getBoard(int num){
 		H_BoardDTO dto = null;
 		
 		try {
@@ -343,7 +343,7 @@ public class H_BoardDAO {
 	//getH_Board(num)
 	
 	//modifyH_Board(num)
-	public H_BoardDTO modifyH_Board(int num){
+	public H_BoardDTO modifyBoard(int num){
 		H_BoardDTO dto = null;
 		try {
 			//디비연결
@@ -393,7 +393,7 @@ public class H_BoardDAO {
 	//modifyH_Board(num)
 	
 	//updateH_Board(num, dto)
-	public void updateH_Board(int num, H_BoardDTO dto){
+	public void updateBoard(int num, H_BoardDTO dto){
 		try {
 		
 		//1. 디비연결
@@ -425,7 +425,7 @@ public class H_BoardDAO {
 	//updateH_Board(num, dto)
 	
 	//deleteH_Board(num)
-	public void deleteH_Board(int num){
+	public void deleteBoard(int num){
 		
 		try {
 			con = getCon();

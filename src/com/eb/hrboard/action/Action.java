@@ -1,4 +1,4 @@
-package com.eb.hrboard.action.copy;
+package com.eb.hrboard.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

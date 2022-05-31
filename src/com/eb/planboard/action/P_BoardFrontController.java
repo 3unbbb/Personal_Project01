@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.eb.hrboard.action.H_BoardMainAction;
+
 
 @WebServlet("*.pbo")
 public class P_BoardFrontController extends HttpServlet{
@@ -51,12 +53,13 @@ public class P_BoardFrontController extends HttpServlet{
 			System.out.println("C : /P_BoardWrite.pbo 호출");
 			System.out.println("C : DB사용 o, 정보입력 페이지(view)");
 			
-			
-			forward.setPath("./planBoard/plan_boardWrite.jsp");
-			forward.setRedirect(false);
-			
-			
-	
+			action = new P_BoardMainAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 		}else if(command.equals("/P_BoardWriteAction.pbo")){
 			System.out.println("C : /P_BoardWriteAction.pbo호출");

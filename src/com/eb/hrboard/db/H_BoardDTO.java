@@ -1,4 +1,4 @@
-package com.eb.hrboard.db.copy;
+package com.eb.hrboard.db;
 
 import java.sql.Date;
 

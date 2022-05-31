@@ -1,4 +1,4 @@
-package com.eb.hrboard.action.copy;
+package com.eb.hrboard.action;
 
 import java.io.IOException;
 
@@ -51,9 +51,14 @@ public class H_BoardFrontController extends HttpServlet{
 			System.out.println("C : /H_BoardWrite.hbo 호출");
 			System.out.println("C : DB사용 o, 정보입력 페이지(view)");
 			
-			forward.setPath("./hrBoard/hr_boardWrite.jsp");
-			forward.setRedirect(false);
-	
+			action = new H_BoardMainAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 			
 		}else if(command.equals("/H_BoardWriteAction.hbo")){
 			System.out.println("C : /H_BoardWriteAction.hbo호출");

@@ -1,4 +1,4 @@
-package com.eb.hrboard.action.copy;
+package com.eb.hrboard.action;
 
 import java.io.PrintWriter;
 
@@ -6,16 +6,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.eb.palnboard.db.P_BoardDAO;
-import com.eb.palnboard.db.P_BoardDTO;
+import com.eb.board.db.BoardDTO;
+import com.eb.member.db.MemberDAO;
 
-public class H_BoardModifyAction implements Action {
+public class H_BoardMainAction implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public ActionForward execute(HttpServletRequest request, 
 			HttpServletResponse response) throws Exception {
-		
-		System.out.println("M : BoardModifyAction-execute()호출");
+		// TODO Auto-generated method stub
 		
 		
 		HttpSession session = request.getSession();
@@ -32,27 +31,21 @@ public class H_BoardModifyAction implements Action {
 		out.println("</script>");
 
 		out.flush();
-		
-		
 		}
 		
-		//전달받은 정보 있음(글번호, 페이지 번호)
-		int num = Integer.parseInt(request.getParameter("num"));
-		String pageNum = request.getParameter("pageNum");
+		MemberDAO dao = new MemberDAO();
+		BoardDTO dto  =  dao.getBoardMember(id);
 		
-		//db사용 0
-		P_BoardDAO dao = new P_BoardDAO();
-		
-		P_BoardDTO dto = dao.modifyP_Board(num);
+		System.out.println("M - dto : " + dto.getB_Department());
+		System.out.println("M - 현재 글쓰기 아이디 : "+ dto.getB_Id());
 		
 		request.setAttribute("dto", dto);
-		request.setAttribute("pageNum", pageNum);
 		
-		//페이지 이동
-		forward.setPath("./planBoard/plan_board_modify.jsp");
+		forward.setPath("./hrBoard/hr_boardWrite.jsp");
 		forward.setRedirect(false);
+
 		
 		return forward;
+	
 	}
-
 }

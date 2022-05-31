@@ -29,7 +29,7 @@
 <% //  BoardDTO dto = (BoardDTO)request.getAttribute("dto"); %>
 
 <%	String sessionId = (String)session.getAttribute("id");
-	
+	BoardDTO dto = (BoardDTO) request.getAttribute("dto");
 		if(sessionId == null){
 			 %><script>
 			 alert('로그인 후 사용가능합니다.');
@@ -41,18 +41,16 @@
 	<!-- Content -->
 		<section>
 			<header class="main">
-			<%-- <input type = "text" value = "<%=dto.getB_Id() %>" >
-				<input type = "text" value = "<%=dto.getB_Company() %>" >
-				<input type = "text" value = "<%=dto.getB_Department() %>" > --%>
+
 				<h1>글쓰기 페이지</h1>
 			</header>
 			
-	<form action ="./P_BoardWriteAction.pbo?id=${dto.getId() }&department=${dto.getDepartment() }" method = "post">
+	<form action ="./H_BoardWriteAction.hbo?id=${dto.getB_Id() }&department=${dto.getB_Department() }" method = "post">
 	
 	<table>
 			<tr>
 				<td> 글쓴이</td>
-				<td><input type = "text" name = "id" value = "${dto.getId() }" disabled="disabled"></td>
+				<td><input type = "text" name = "id" value = "${dto.getB_Id() }" disabled="disabled"></td>
 			</tr>
 
 

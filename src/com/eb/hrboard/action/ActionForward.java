@@ -1,4 +1,4 @@
-package com.eb.hrboard.action.copy;
+package com.eb.hrboard.action;
 
 public class ActionForward {
 	//페이지 이동할 때 사용하는 객체

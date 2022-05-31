@@ -73,7 +73,7 @@
 		        		<img src="./images/re.png" width = "15">
 		     	  </c:if> 
 		     	  
-				<a href="./H_BoardContent.pbo?num=${dto.num }&pageNum=<%=pageNum%>">
+				<a href="./H_BoardContent.hbo?num=${dto.num }&pageNum=<%=pageNum%>">
 				${dto.subject }
 				</a>
 				</td>
@@ -92,18 +92,18 @@
 			
 		if(startPage > pageBlock){
 		%>
-		<a href="./H_BoardList.pbo?pageNum=<%=startPage-pageBlock%>">[이전]</a>
+		<a href="./H_BoardList.hbo?pageNum=<%=startPage-pageBlock%>">[이전]</a>
 		<% 
 		}
 		
 		for(int i = startPage;i<=endPage;i++){
 			%>
-				<a href="./H_BoardList.pbo?pageNum=<%=i%>">[<%=i %>]</a>
+				<a href="./H_BoardList.hbo?pageNum=<%=i%>">[<%=i %>]</a>
 			<%
 		}
 		if(endPage > pageCount){
 			%>
-			<a href="./H_BoardList.pbo?pageNum=<%=startPage+pageBlock%>">[다음]</a>
+			<a href="./H_BoardList.hbo?pageNum=<%=startPage+pageBlock%>">[다음]</a>
 			<% 	
 			
 		}
@@ -114,7 +114,7 @@
 		
 	</article>
 	<section class="wirte_search">
-    <input type = "button" value="write" onclick=" location.href ='./H_BoardWrite.pbo';">
+    <input type = "button" value="write" onclick=" location.href ='./H_BoardWrite.hbo';">
    
 	</section>
 	<!-- Search -->

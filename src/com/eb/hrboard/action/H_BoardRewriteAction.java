@@ -1,4 +1,4 @@
-package com.eb.hrboard.action.copy;
+package com.eb.hrboard.action;
 
 import java.io.PrintWriter;
 
@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.eb.hrboard.db.H_BoardDTO;
 import com.eb.member.db.MemberDAO;
-import com.eb.palnboard.db.P_BoardDTO;
 
 public class H_BoardRewriteAction implements Action {
 
@@ -41,11 +41,11 @@ public class H_BoardRewriteAction implements Action {
 			MemberDAO dao = new MemberDAO();
 			
 			//id에 해당하는 정보 가지고 오기 getMember(id)
-			P_BoardDTO dto = new P_BoardDTO();
+			H_BoardDTO dto = new H_BoardDTO();
 			
 
 
-			forward.setPath("./planBoard/plan_board_rewrite.jsp");
+			forward.setPath("./hrBoard/hr_board_rewrite.jsp");
 			forward.setRedirect(false);
 							
 		// TODO Auto-generated method stub

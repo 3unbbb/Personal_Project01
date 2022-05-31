@@ -43,13 +43,11 @@
 	<!-- Content -->
 		<section>
 			<header class="main">
-			<%-- <input type = "text" value = "<%=dto.getB_Id() %>" >
-				<input type = "text" value = "<%=dto.getB_Company() %>" >
-				<input type = "text" value = "<%=dto.getB_Department() %>" > --%>
+
 				<h1>글 수정 페이지</h1>
 			</header>
 			
-	<form action ="./P_BoardUpdateAction.pbo?num=${dto.num }&pageNum=<%=pageNum %>';" method = "post">
+	<form action ="./H_BoardUpdateAction.hbo?num=${dto.num }&pageNum=<%=pageNum %>';" method = "post">
 
 	<table>
 			<tr>

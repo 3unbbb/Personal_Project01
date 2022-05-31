@@ -1,4 +1,4 @@
-package com.eb.hrboard.action.copy;
+package com.eb.hrboard.action;
 
 import java.io.PrintWriter;
 import java.util.List;
@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.eb.hrboard.db.copy.H_BoardDAO;
-import com.eb.hrboard.db.copy.H_BoardDTO;
+import com.eb.hrboard.db.H_BoardDAO;
+import com.eb.hrboard.db.H_BoardDTO;
 import com.eb.member.db.MemberDAO;
 
 
@@ -42,7 +42,7 @@ public class H_BoardListAction implements Action {
 				
 		H_BoardDAO dao = new H_BoardDAO();
 		
-		int result = dao.getH_BoardCount();
+		int result = dao.getBoardCount();
 		
 		//글이 있을 때 글 정보 전부를 가져오기(List로)
 		//페이징처리
@@ -63,7 +63,7 @@ public class H_BoardListAction implements Action {
 		
 		List boardList = null;
 		if(result>0){
-			boardList = dao.getH_BoardList(startRow, pageSize);
+			boardList = dao.getBoardList(startRow, pageSize);
 		}
 		
 		//전체 페이지 수

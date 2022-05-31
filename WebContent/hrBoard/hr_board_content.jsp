@@ -1,4 +1,5 @@
-<%@page import="com.eb.palnboard.db.P_BoardDTO"%>
+
+<%@page import="com.eb.hrboard.db.H_BoardDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,7 +36,7 @@
 	
 	<%
 	//보낸정보 받기
-	P_BoardDTO dto =(P_BoardDTO)request.getAttribute("dto");
+	H_BoardDTO dto =(H_BoardDTO)request.getAttribute("dto");
  
  	String pageNum = (String)request.getAttribute("pageNum");
 	%>

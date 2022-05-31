@@ -68,7 +68,7 @@ public class MemberDAO {
 				con = getCon();
 				
 				
-				sql = "select id from eb_member where id=?";	//아이디 같은게 있으면
+				sql = "select * from eb_member where id=?";	//아이디 같은게 있으면
 				pstmt = con.prepareStatement(sql);
 				
 				//???

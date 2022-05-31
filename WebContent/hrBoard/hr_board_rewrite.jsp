@@ -41,13 +41,11 @@
 	<!-- Content -->
 		<section>
 			<header class="main">
-			<%-- <input type = "text" value = "<%=dto.getB_Id() %>" >
-				<input type = "text" value = "<%=dto.getB_Company() %>" >
-				<input type = "text" value = "<%=dto.getB_Department() %>" > --%>
+
 				<h1>글쓰기 페이지</h1>
 			</header>
 			
-	<form action ="./P_BoardReinsertAction.pbo?id=${dto.getId() }&department=${dto.getDepartment() }" method = "post">
+	<form action ="./H_BoardReinsertAction.hbo?id=${dto.getId() }&department=${dto.getDepartment() }" method = "post">
 		<input type="hidden" name="num" value ="${param.num }">
 		<input type="hidden" name="re_ref" value ="${param.re_ref }">
 		<input type="hidden" name="re_lev" value ="${param.re_lev }">
