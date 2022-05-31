@@ -47,7 +47,7 @@
 	
 		if(De.equals("strategy")==false ){
 			 %><script>
-			 alert('기획부서만 사용할 수 있습니다.');
+			 alert('해당부서만 사용할 수 있습니다.');
 			 location.href='./Main.ma';</script><%
 		}
 	

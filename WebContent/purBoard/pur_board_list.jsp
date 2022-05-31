@@ -44,7 +44,7 @@
 			
 	<%	String sessionId = (String)session.getAttribute("id");
 	
-		if(De.equals("hr")==false ){
+		if(De.equals("purchase")==false ){
 			 %><script>
 			 alert('해당부서만 사용할 수 있습니다.');
 			 location.href='./Main.ma';</script><%
@@ -73,7 +73,7 @@
 		        		<img src="./images/re.png" width = "15">
 		     	  </c:if> 
 		     	  
-				<a href="./H_BoardContent.hbo?num=${dto.num }&pageNum=<%=pageNum%>">
+				<a href="./U_BoardContent.ubo?num=${dto.num }&pageNum=<%=pageNum%>">
 				${dto.subject }
 				</a>
 				</td>
@@ -92,18 +92,18 @@
 			
 		if(startPage > pageBlock){
 		%>
-		<a href="./H_BoardList.hbo?pageNum=<%=startPage-pageBlock%>">[이전]</a>
+		<a href="./U_BoardList.ubo?pageNum=<%=startPage-pageBlock%>">[이전]</a>
 		<% 
 		}
 		
 		for(int i = startPage;i<=endPage;i++){
 			%>
-				<a href="./H_BoardList.hbo?pageNum=<%=i%>">[<%=i %>]</a>
+				<a href="./U_BoardList.ubo?pageNum=<%=i%>">[<%=i %>]</a>
 			<%
 		}
 		if(endPage > pageCount){
 			%>
-			<a href="./H_BoardList.hbo?pageNum=<%=startPage+pageBlock%>">[다음]</a>
+			<a href="./U_BoardList.ubo?pageNum=<%=startPage+pageBlock%>">[다음]</a>
 			<% 	
 			
 		}
@@ -114,7 +114,7 @@
 		
 	</article>
 	<section class="wirte_search">
-    <input type = "button" value="write" onclick=" location.href ='./H_BoardWrite.hbo';">
+    <input type = "button" value="write" onclick=" location.href ='./U_BoardWrite.ubo';">
    
 	</section>
 	<!-- Search -->
