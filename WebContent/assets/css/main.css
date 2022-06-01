@@ -1033,6 +1033,7 @@ input[type="email"],
 input[type="tel"],
 input[type="search"],
 input[type="url"],
+input[type="number"],
 select,
 textarea {
   -moz-appearance: none;
@@ -1091,6 +1092,7 @@ input[type="email"],
 input[type="tel"],
 input[type="search"],
 input[type="url"],
+input[type="number"],
 select {
   height: 2.75em; }
 
