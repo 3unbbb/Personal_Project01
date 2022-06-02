@@ -40,6 +40,8 @@ public class MailSendFrontController extends HttpServlet{
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
+
+		
 		try {
 			Properties properties = System.getProperties();
 			
@@ -62,8 +64,9 @@ public class MailSendFrontController extends HttpServlet{
 			message.setSentDate(new java.util.Date());
 			
 			Transport.send(message);
-			//out.print("<h3>메일이 정상적으로 전송되었습니다.</h3>");
-
+			
+			
+			
 			out.println("<script language='javascript'>");
 			out.println("alert('메일이 정상적으로 전송되었습니다.')");
 			out.println("location.href='./Main.ma';");
@@ -76,8 +79,6 @@ public class MailSendFrontController extends HttpServlet{
 			out.print("SMTP 서버가 잘못 설정되었거나 서비스에 문제가 있습니다.");
 			e.printStackTrace();
 		}
-		
-		
 		
 		
 	}

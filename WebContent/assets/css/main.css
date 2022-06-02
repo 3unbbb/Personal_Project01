@@ -101,7 +101,7 @@ body {
 
 /* Type */
 body, input, select, textarea {
-  color: #7f888f;
+  color: #000000;
   font-family: 'Do Hyeon', sans-serif;
   font-size: 13pt;
   font-weight: 400;
@@ -131,7 +131,7 @@ a {
       color: inherit; }
 
 strong, b {
-  color: #3d4449;
+  color: #000000;
   font-weight: 600; }
 
 em, i {
@@ -1181,7 +1181,7 @@ input[type="radio"] + label:before {
 :-ms-input-placeholder {
   color: #9fa3a6 !important;
   opacity: 1.0; }
-
+  
 /* Box */
 .box {
   border-radius: 0.375em;

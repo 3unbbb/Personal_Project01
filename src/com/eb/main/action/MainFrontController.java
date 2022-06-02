@@ -63,9 +63,23 @@ public class MainFrontController extends HttpServlet{
 		}else if(command.equals("/Mail.ma")){
 			System.out.println("/Mail.ma 호출");
 			
+			action = new MailWriteAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			
+		}else if(command.equals("/News.ma")){
+			System.out.println("/News.ma 호출");
+			
 			forward = new ActionForward();
-			forward.setPath("./main/mail.jsp");
+			forward.setPath("./main/news.jsp");
 			forward.setRedirect(false);
+			
 			
 		}
 		

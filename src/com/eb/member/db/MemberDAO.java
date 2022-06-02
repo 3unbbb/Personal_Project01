@@ -310,6 +310,45 @@ public class MemberDAO {
 		}
 	
 	//getBoardMember()	
+		
+		//getBoardMember()
+		public String getEmail(String id){
+			String Em = null;
+			try {
+				
+				//db연결
+				con = getCon();
+				
+				//sql , pstmt
+				sql = "select * from eb_member "
+						+ "where id = ?";
+				
+				pstmt = con.prepareStatement(sql);
+				
+				//???
+				pstmt.setString(1, id);
+				
+				//쿼리 실행
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()){
+						Em = rs.getString("email");
+				}
+				
+				System.out.println("DAO : 이메일 정보 조회 완료");
+				
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeDB();
+			}
+			
+			return Em;
+		}
+	
+	//getBoardMember()	
 			
 	//updateMember(company, department, email)		
 		public void updateMember(String id, String company,

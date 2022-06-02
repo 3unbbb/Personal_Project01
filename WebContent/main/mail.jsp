@@ -9,7 +9,7 @@
 -->
 <html>
 	<head>
-		<title>글쓰기</title>
+		<title></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
@@ -26,17 +26,7 @@
 	<!-- Header -->
 		<jsp:include page="../inc/top.jsp"></jsp:include>
 	<!-- Header -->
-<% //  BoardDTO dto = (BoardDTO)request.getAttribute("dto"); %>
-
-<%	String sessionId = (String)session.getAttribute("id");
-	
-		if(sessionId == null){
-			 %><script>
-			 alert('로그인 후 사용가능합니다.');
-			 location.href='./Login.mm';</script><%
-		}
-	
-	%>
+<% String Email = (String)request.getAttribute("Em"); %>
 
 	<!-- Content -->
 		<section>
@@ -44,7 +34,9 @@
 			<%-- <input type = "text" value = "<%=dto.getB_Id() %>" >
 				<input type = "text" value = "<%=dto.getB_Company() %>" >
 				<input type = "text" value = "<%=dto.getB_Department() %>" > --%>
-				<h1>메일</h1>
+				<h1>건의사항을 남겨주세요</h1>
+				<h2>불편한 점이나 개선사항을 메일로 보내주세요!</h2>
+				<h3></h3>
 			</header>
 			
 	<form action ="mailSend" method = "post">
@@ -52,9 +44,9 @@
 	<table>
 			<tr>
 				<td> 보내는 사람</td>
-				<td><input type = "text" name = "sender" ></td>
+				<td><input type = "text" name = "sender" value=<%=Email %> readonly="readonly"></td>
 				<td> 받는 사람</td>
-				<td><input type = "text" name = "receiver" ></td>
+				<td><input type = "text" name = "receiver" value="3unbbb@gmail.com" readonly="readonly"></td>
 			</tr>
 
 

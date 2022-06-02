@@ -12,13 +12,74 @@
 
 	<head>
 		<title>Editorial by HTML5 UP</title>
+		<script src="./js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+  			$(document).ready(function(){
+
+
+      //jtbc - 뉴스RSS
+      $.ajax({
+    	  url : "https://fs.jtbc.joins.com//RSS/newsflash.xml",
+    	  success: function(data){
+    		  
+    		  // 뉴스 기사를 화면에 출력 + 기사클릭시 링크로 이동
+    		  $(data).find('item').each(function(i){
+    			  if(i == 5) return false;
+    			  var title = $(this).find('title').text();
+    			  var link = $(this).find('link').text();
+    			  $('.flash').append("<a href='"+link+"'>"+title+"</a><br><br>");
+    		  });
+    		  
+    		  
+    	  }
+      });
+      
+      $.ajax({
+    	  url : "https://fs.jtbc.joins.com/RSS/economy.xml",
+    	  success: function(data){
+    		  
+    		  // 뉴스 기사를 화면에 출력 + 기사클릭시 링크로 이동
+    		  $(data).find('item').each(function(i){
+    			  if(i == 5) return false;
+    			  var title = $(this).find('title').text();
+    			  var link = $(this).find('link').text();
+    			  $('.economy').append("<a href='"+link+"'>"+title+"</a><br><br>");
+    		  });
+    		  
+    		  
+    	  }
+      });
+      
+      $.ajax({
+    	  url : "https://fs.jtbc.joins.com/RSS/entertainment.xml",
+    	  success: function(data){
+    		  
+    		  // 뉴스 기사를 화면에 출력 + 기사클릭시 링크로 이동
+    		  $(data).find('item').each(function(i){
+    			  if(i == 5) return false;
+    			  var title = $(this).find('title').text();
+    			  var link = $(this).find('link').text();
+    			  $('.entertainment').append("<a href='"+link+"'>"+title+"</a><br><br>");
+    		  });
+    		  
+    		  
+    	  }
+      });
+
+  });
+
+</script>
 		
-		
-		
-		</script>	
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
+		<style type="text/css">
+		#news{
+			display: inline-block;
+			width : 33%;
+		}
+		</style>
+		
 	</head>
 	<body class="is-preload">
 
@@ -34,19 +95,16 @@
 	<!-- Header -->
 	
 	<!-- news -->
-	<section id="banner">
+	
 		<div class="content">
 			<header width ="50%">
-				<h1>Main Page!</h1>
-				<ul class="actions">
-					<li><a href="./BoardList.bo" class="button big">Learn More</a></li>
-				</ul>	
+			<br>
+				<h1>Main Page!</h1>	
+				<hr>
 			</header>
 		</div>
-		
-
-		<span class="image object">
-		<h2>오늘의 인기글</h2>
+	<div>
+		<h2>이번주 인기글</h2>
 		<table>
 		 <c:forEach var = "dto" items="${boardList }">
 			<tr>
@@ -55,14 +113,30 @@
 			</c:forEach>
 		
 		</table>
-		</span>
-
-	</section>
+	</div>
+	
 	<!-- news -->
+	<hr>
+		<h1>Today's News!</h1>
+
+		<div class="flash" id="news">
+			<h2><속보></h2>
+		</div>
+	
+		<div class="economy" id="news">
+			<h2><경제></h2>
+		</div>
+	
+		<div class="entertainment" id="news">
+			<h2><연예></h2>
+		</div>
+
+	
 								
 		
 	
 								
+	<!-- news -->
 
 	<!-- Footer -->
 		<footer id="footer">

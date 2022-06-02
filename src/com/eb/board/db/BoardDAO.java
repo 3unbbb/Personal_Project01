@@ -168,7 +168,7 @@ public class BoardDAO {
 			
 			//sql & pstmt
 			sql = "select * from "
-					+ "eb_board where date_format(date,'%Y-%M-%d')=date_format(now(),'%Y-%M-%d') "
+					+ "eb_board where DATE_FORMAT(date ,'%Y-%m-%d' ) < DATE_SUB(CURDATE(), INTERVAL 7 DAY) "
 					+ " order by read_count desc limit 5";
 			pstmt = con.prepareStatement(sql);
 			
