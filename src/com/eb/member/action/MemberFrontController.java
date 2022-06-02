@@ -137,6 +137,21 @@ public class MemberFrontController extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+		}else if(command.equals("/MemberList.mm")){
+			System.out.println("C : /MemberList.mm 호출");
+			//DB사용, VIEW 출력
+
+			//MemberListAction 객체 생성
+			action = new MemberListAction();
+
+			try {
+			forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 		}
 		
 		

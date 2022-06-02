@@ -409,6 +409,55 @@ public class MemberDAO {
 			
 			
 		}
+
+		public List<MemberDTO> getMemberList() {
+			List<MemberDTO> memberList = new ArrayList<MemberDTO>();
+
+			try {
+				//디비연결
+				con = getCon();
+
+				//sql & pstmt
+				sql = "select * from eb_member";
+				pstmt = con.prepareStatement(sql);
+
+				//sql 실행
+				rs = pstmt.executeQuery();
+
+				System.out.println("쿼리 실행완료");
+
+				//5. 데이터 받아오기(db -> dto)
+				while(rs.next()){
+					MemberDTO dto = new MemberDTO();
+
+					dto.setCompany(rs.getString("company"));
+					dto.setAge(rs.getInt("age"));
+					dto.setDepartment(rs.getString("department"));
+					dto.setEmail(rs.getString("email"));
+					dto.setId(rs.getString("id"));
+					dto.setName(rs.getNString("name"));
+					dto.setPass(rs.getString("pass"));
+					dto.setTel(rs.getString("tel"));
+					dto.setAddress(rs.getString("address"));
+					dto.setDetailAddress(rs.getString("detailAddress"));
+					dto.setPostcode(rs.getString("postcode"));
+
+					//dto에 저장한 정보 > Array에 담기 (arrayList 생성)
+					memberList.add(dto);
+				}
+
+				System.out.println("DAO :(관리자)회원 목록 조회 성공");
+
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				closeDB();
+			}
+
+			return memberList;
+		}
+
 			
 	//updateMember(company, department, email)		
 			

@@ -32,7 +32,8 @@
 										<li><a href="./MemberInfo.mm">마이페이지</a></li>
 										<li><a href="./GalleryList.ga">Gallery</a></li>
 										<li><a href="./Mail.ma">건의사항을 남겨주세요</a></li>
-
+										
+							
 									</ul>
 								</nav>
 								
