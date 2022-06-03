@@ -30,22 +30,7 @@
   	<servlet-name>MemberFrontController</servlet-name>
   	<url-pattern>*.mm</url-pattern>
   </servlet-mapping>
-  
-  <servlet-mapping>
-   <servlet-name>default</servlet-name>
-    <url-pattern>*.js</url-pattern>
- </servlet-mapping>
  
-  <servlet-mapping>
- <servlet-name>default</servlet-name>
- <url-pattern>*.css</url-pattern>
- </servlet-mapping>
- 
- <servlet-mapping>
- <servlet-name>default</servlet-name>
- <url-pattern>*.jpg</url-pattern>
- </servlet-mapping>
-
   
   <!-- 한글처리하기 -->
   <filter>

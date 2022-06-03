@@ -50,7 +50,7 @@
 			<tr>
 				<th>글번호</th>
  			 	<th>제목</th>
-   				<th>글쓴이</th>
+   				<th>회사-글쓴이</th>
    				<th>작성일</th>
 				<th>조회수</th>
 				
@@ -73,7 +73,7 @@
 		   		</c:if>
 				</td>
 				
-   				<td>${dto.b_Company }</td>
+   				<td>${dto.b_Company }-${dto.b_Id }</td>
    				<td>${dto.date }</td>
    				<td>${dto.read_count }</td>
    				

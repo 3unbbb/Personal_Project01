@@ -146,11 +146,9 @@
 							<option value ="hr">인사</option>
 							<option value ="account">재무/회계</option>
 							<option value ="purchase">구매/자재</option>
-							<option value ="production">생산</option>
-							<option value ="IT">IT</option>
-							<option value ="marketing">마케팅</option>
 							</select>
-							</td>
+					
+				</td>
 			</tr>
 
 		</table>
